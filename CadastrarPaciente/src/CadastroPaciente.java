@@ -10,6 +10,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         jInternalFrameCadastrarDados.setVisible(false);
         jInternalFramecontato.setVisible(false);
+        jInternalFrameDadosPaciente.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -45,6 +46,17 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jTextFieldemail = new javax.swing.JTextField();
         jTextFieldtelefone = new javax.swing.JTextField();
         jButtonproximo2 = new javax.swing.JButton();
+        jButtonAnterior = new javax.swing.JButton();
+        jInternalFrameDadosPaciente = new javax.swing.JInternalFrame();
+        jLabelTipoSangue = new javax.swing.JLabel();
+        jLabelNomedoença = new javax.swing.JLabel();
+        jLabelrRegSUS = new javax.swing.JLabel();
+        jComboBoxTipoSangue = new javax.swing.JComboBox<>();
+        jTextFieldNomeDoença = new javax.swing.JTextField();
+        jTextFieldRegSUS = new javax.swing.JTextField();
+        jButtonSalvar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButtonAnterior2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemCadastrar = new javax.swing.JMenuItem();
@@ -75,6 +87,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jDesktopPane1.setMaximumSize(new java.awt.Dimension(200, 200));
 
         jInternalFrameCadastrarDados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jInternalFrameCadastrarDados.setTitle("Informações pessoais");
         jInternalFrameCadastrarDados.setName(""); // NOI18N
         try {
             jInternalFrameCadastrarDados.setSelected(true);
@@ -82,173 +95,178 @@ public class CadastroPaciente extends javax.swing.JFrame {
             e1.printStackTrace();
         }
         jInternalFrameCadastrarDados.setVisible(true);
+        jInternalFrameCadastrarDados.getContentPane().setLayout(null);
 
         jLabelnome.setText("Nome");
+        jInternalFrameCadastrarDados.getContentPane().add(jLabelnome);
+        jLabelnome.setBounds(18, 14, 56, 14);
 
         jLabelidade.setText("Idade");
+        jInternalFrameCadastrarDados.getContentPane().add(jLabelidade);
+        jLabelidade.setBounds(18, 66, 71, 14);
 
         jLabelsexo.setText("Sexo");
+        jInternalFrameCadastrarDados.getContentPane().add(jLabelsexo);
+        jLabelsexo.setBounds(18, 40, 24, 14);
 
         jLabelCPF.setText("CPF");
+        jInternalFrameCadastrarDados.getContentPane().add(jLabelCPF);
+        jLabelCPF.setBounds(18, 92, 19, 14);
 
         jLabelnomepai.setText("Nome do pai");
+        jInternalFrameCadastrarDados.getContentPane().add(jLabelnomepai);
+        jLabelnomepai.setBounds(18, 115, 59, 14);
 
         jLabelnomemae.setText("Nome da mãe");
+        jInternalFrameCadastrarDados.getContentPane().add(jLabelnomemae);
+        jLabelnomemae.setBounds(18, 149, 65, 14);
 
-        jButtonproximo.setText("PRÓXIMO");
+        jButtonproximo.setText("Próximo");
         jButtonproximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonproximoActionPerformed(evt);
             }
         });
+        jInternalFrameCadastrarDados.getContentPane().add(jButtonproximo);
+        jButtonproximo.setBounds(117, 172, 100, 23);
+        jInternalFrameCadastrarDados.getContentPane().add(jTextFieldnome);
+        jTextFieldnome.setBounds(117, 11, 218, 20);
 
         jComboBoxsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
+        jInternalFrameCadastrarDados.getContentPane().add(jComboBoxsexo);
+        jComboBoxsexo.setBounds(117, 37, 81, 20);
+        jInternalFrameCadastrarDados.getContentPane().add(jTextFieldidade);
+        jTextFieldidade.setBounds(117, 63, 218, 20);
+        jInternalFrameCadastrarDados.getContentPane().add(jTextFieldCPF);
+        jTextFieldCPF.setBounds(117, 89, 218, 20);
+        jInternalFrameCadastrarDados.getContentPane().add(jTextFieldnomepai);
+        jTextFieldnomepai.setBounds(117, 115, 218, 20);
+        jInternalFrameCadastrarDados.getContentPane().add(jTextFieldnomemae);
+        jTextFieldnomemae.setBounds(117, 146, 218, 20);
 
-        javax.swing.GroupLayout jInternalFrameCadastrarDadosLayout = new javax.swing.GroupLayout(jInternalFrameCadastrarDados.getContentPane());
-        jInternalFrameCadastrarDados.getContentPane().setLayout(jInternalFrameCadastrarDadosLayout);
-        jInternalFrameCadastrarDadosLayout.setHorizontalGroup(
-            jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameCadastrarDadosLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelnome, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelsexo)
-                    .addComponent(jLabelidade, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCPF)
-                    .addComponent(jLabelnomepai)
-                    .addComponent(jLabelnomemae))
-                .addGap(28, 28, 28)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldnome, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                    .addComponent(jComboBoxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldidade)
-                    .addComponent(jTextFieldCPF)
-                    .addComponent(jTextFieldnomepai)
-                    .addComponent(jTextFieldnomemae)
-                    .addComponent(jButtonproximo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jInternalFrameCadastrarDadosLayout.setVerticalGroup(
-            jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameCadastrarDadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelnome)
-                    .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelsexo)
-                    .addComponent(jComboBoxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelidade)
-                    .addComponent(jTextFieldidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCPF)
-                    .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelnomepai)
-                    .addComponent(jTextFieldnomepai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jInternalFrameCadastrarDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelnomemae)
-                    .addComponent(jTextFieldnomemae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonproximo)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-
+        jInternalFramecontato.setTitle("Informações de localização");
         jInternalFramecontato.setVisible(true);
+        jInternalFramecontato.getContentPane().setLayout(null);
 
         jLabelcidade.setText("Cidade");
+        jInternalFramecontato.getContentPane().add(jLabelcidade);
+        jLabelcidade.setBounds(0, 44, 77, 14);
 
         jLabelestado.setText("Estado");
+        jInternalFramecontato.getContentPane().add(jLabelestado);
+        jLabelestado.setBounds(0, 18, 57, 14);
 
         jLabelemail.setText("Email");
+        jInternalFramecontato.getContentPane().add(jLabelemail);
+        jLabelemail.setBounds(0, 96, 24, 14);
 
         jLabeltelefone.setText("Telefone");
+        jInternalFramecontato.getContentPane().add(jLabeltelefone);
+        jLabeltelefone.setBounds(0, 127, 42, 14);
 
         jLabelbairro.setText("Bairro");
+        jInternalFramecontato.getContentPane().add(jLabelbairro);
+        jLabelbairro.setBounds(0, 70, 28, 14);
+        jInternalFramecontato.getContentPane().add(jTextFieldestado);
+        jTextFieldestado.setBounds(81, 15, 183, 20);
+        jInternalFramecontato.getContentPane().add(jTextFieldcidade);
+        jTextFieldcidade.setBounds(81, 41, 183, 20);
+        jInternalFramecontato.getContentPane().add(jTextFieldbairro);
+        jTextFieldbairro.setBounds(81, 67, 183, 20);
+        jInternalFramecontato.getContentPane().add(jTextFieldemail);
+        jTextFieldemail.setBounds(81, 93, 183, 20);
+        jInternalFramecontato.getContentPane().add(jTextFieldtelefone);
+        jTextFieldtelefone.setBounds(81, 124, 183, 20);
 
-        jButtonproximo2.setText("PRÓXIMO");
+        jButtonproximo2.setText("Próximo");
         jButtonproximo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonproximo2ActionPerformed(evt);
             }
         });
+        jInternalFramecontato.getContentPane().add(jButtonproximo2);
+        jButtonproximo2.setBounds(184, 151, 71, 23);
 
-        javax.swing.GroupLayout jInternalFramecontatoLayout = new javax.swing.GroupLayout(jInternalFramecontato.getContentPane());
-        jInternalFramecontato.getContentPane().setLayout(jInternalFramecontatoLayout);
-        jInternalFramecontatoLayout.setHorizontalGroup(
-            jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFramecontatoLayout.createSequentialGroup()
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelestado, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelcidade, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelbairro)
-                    .addComponent(jLabelemail)
-                    .addComponent(jLabeltelefone))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextFieldestado)
-                        .addComponent(jTextFieldcidade)
-                        .addComponent(jTextFieldbairro)
-                        .addComponent(jTextFieldemail)
-                        .addComponent(jTextFieldtelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
-                    .addComponent(jButtonproximo2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 41, Short.MAX_VALUE))
-        );
-        jInternalFramecontatoLayout.setVerticalGroup(
-            jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFramecontatoLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelestado)
-                    .addComponent(jTextFieldestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelcidade)
-                    .addComponent(jTextFieldcidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelbairro)
-                    .addComponent(jTextFieldbairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelemail)
-                    .addComponent(jTextFieldemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jInternalFramecontatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabeltelefone)
-                    .addComponent(jTextFieldtelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonproximo2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jButtonAnterior.setText("Anterior");
+        jButtonAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAnteriorActionPerformed(evt);
+            }
+        });
+        jInternalFramecontato.getContentPane().add(jButtonAnterior);
+        jButtonAnterior.setBounds(84, 151, 94, 23);
+
+        jInternalFrameDadosPaciente.setTitle("Ficha técnica");
+        jInternalFrameDadosPaciente.setVisible(true);
+        jInternalFrameDadosPaciente.getContentPane().setLayout(null);
+
+        jLabelTipoSangue.setText("Tipo sanguíneo");
+        jInternalFrameDadosPaciente.getContentPane().add(jLabelTipoSangue);
+        jLabelTipoSangue.setBounds(10, 14, 85, 14);
+
+        jLabelNomedoença.setText("Nome da doença");
+        jInternalFrameDadosPaciente.getContentPane().add(jLabelNomedoença);
+        jLabelNomedoença.setBounds(10, 37, 80, 14);
+
+        jLabelrRegSUS.setText("Registro SUS");
+        jInternalFrameDadosPaciente.getContentPane().add(jLabelrRegSUS);
+        jLabelrRegSUS.setBounds(10, 63, 62, 14);
+
+        jComboBoxTipoSangue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
+        jInternalFrameDadosPaciente.getContentPane().add(jComboBoxTipoSangue);
+        jComboBoxTipoSangue.setBounds(99, 11, 58, 20);
+        jInternalFrameDadosPaciente.getContentPane().add(jTextFieldNomeDoença);
+        jTextFieldNomeDoença.setBounds(100, 37, 173, 20);
+        jInternalFrameDadosPaciente.getContentPane().add(jTextFieldRegSUS);
+        jTextFieldRegSUS.setBounds(100, 63, 173, 20);
+
+        jButtonSalvar.setText("Salvar");
+        jInternalFrameDadosPaciente.getContentPane().add(jButtonSalvar);
+        jButtonSalvar.setBounds(51, 204, 63, 23);
+
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+        jInternalFrameDadosPaciente.getContentPane().add(jButtonCancelar);
+        jButtonCancelar.setBounds(120, 204, 75, 23);
+
+        jButtonAnterior2.setText("Anterior");
+        jInternalFrameDadosPaciente.getContentPane().add(jButtonAnterior2);
+        jButtonAnterior2.setBounds(201, 204, 71, 23);
 
         jDesktopPane1.setLayer(jInternalFrameCadastrarDados, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jInternalFramecontato, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jInternalFrameDadosPaciente, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addComponent(jInternalFrameCadastrarDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jInternalFramecontato))
+                .addComponent(jInternalFrameCadastrarDados, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jInternalFramecontato, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jInternalFrameDadosPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 356, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jInternalFrameCadastrarDados)
-                    .addComponent(jInternalFramecontato))
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jInternalFramecontato, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jInternalFrameCadastrarDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jInternalFrameDadosPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         jInternalFrameCadastrarDados.getAccessibleContext().setAccessibleDescription("");
@@ -258,12 +276,16 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(57, 57, 57))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(26, 26, 26))
         );
 
         jMenu1.setText("Cadastro");
@@ -303,14 +325,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1003, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 463, Short.MAX_VALUE))
         );
 
         pack();
@@ -322,9 +344,12 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void jMenuItemCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarActionPerformed
         jInternalFrameCadastrarDados.setVisible(true);
+
+
     }//GEN-LAST:event_jMenuItemCadastrarActionPerformed
 
     private void jButtonproximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximoActionPerformed
+
         try {
             met.setNome(jTextFieldnome.getText());
             met.setSexo(jComboBoxsexo.getSelectedItem().toString());
@@ -335,8 +360,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         } catch (NumberFormatException numberEx) {
             met.setIdade(0);
             numberEx.printStackTrace();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro \n " + e.getMessage());
         }
         jInternalFrameCadastrarDados.setVisible(false);
         jInternalFramecontato.setVisible(true);
@@ -356,8 +379,18 @@ public class CadastroPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro \n " + e.getMessage());
         }
         jInternalFramecontato.setVisible(false);
-                    
+        jInternalFrameDadosPaciente.setVisible(true);
+
     }//GEN-LAST:event_jButtonproximo2ActionPerformed
+
+    private void jButtonAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnteriorActionPerformed
+        jInternalFramecontato.setVisible(false);
+        jInternalFrameCadastrarDados.setVisible(true);
+    }//GEN-LAST:event_jButtonAnteriorActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+            jInternalFrameCadastrarDados.dispose();
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     public static void main(String args[]) {
 
@@ -371,14 +404,22 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAnterior;
+    private javax.swing.JButton jButtonAnterior2;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonproximo;
     private javax.swing.JButton jButtonproximo2;
+    private javax.swing.JComboBox<String> jComboBoxTipoSangue;
     private javax.swing.JComboBox<String> jComboBoxsexo;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JInternalFrame jInternalFrameCadastrarDados;
     private javax.swing.JInternalFrame jInternalFrameContato;
+    private javax.swing.JInternalFrame jInternalFrameDadosPaciente;
     private javax.swing.JInternalFrame jInternalFramecontato;
     private javax.swing.JLabel jLabelCPF;
+    private javax.swing.JLabel jLabelNomedoença;
+    private javax.swing.JLabel jLabelTipoSangue;
     private javax.swing.JLabel jLabelbairro;
     private javax.swing.JLabel jLabelcidade;
     private javax.swing.JLabel jLabelemail;
@@ -387,6 +428,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelnome;
     private javax.swing.JLabel jLabelnomemae;
     private javax.swing.JLabel jLabelnomepai;
+    private javax.swing.JLabel jLabelrRegSUS;
     private javax.swing.JLabel jLabelsexo;
     private javax.swing.JLabel jLabeltelefone;
     private javax.swing.JMenuItem jMeneItemExibirDados;
@@ -398,6 +440,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemCadastrar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldCPF;
+    private javax.swing.JTextField jTextFieldNomeDoença;
+    private javax.swing.JTextField jTextFieldRegSUS;
     private javax.swing.JTextField jTextFieldbairro;
     private javax.swing.JTextField jTextFieldcidade;
     private javax.swing.JTextField jTextFieldemail;
