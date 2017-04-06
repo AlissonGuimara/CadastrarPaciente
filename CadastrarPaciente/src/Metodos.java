@@ -21,6 +21,15 @@ public class Metodos {
         this.tipoSangue = tipoSangue;
         this.bairro = bairro;
     }
+    public void  setSalvar(){
+        this.salvar = "Nome: "+getNome()+"\r\nSexo: "+getSexo()+"\r\nIdade: "+getIdade()+"\r\nCPF: "+getCpf()+"\r\nNome do Pai: "+getNomePai()+"\r\nNome da Mãe: "+getNomeMae()
+                +"\r\nEstado: "+getEstado()+"\r\nCidade: "+getCidade()+"\r\nBairro: "+getBairro()+"\r\nEmail: "+getEmail()+"\r\nTelefone: "+getTelefone()+"\r\nTipo Sanguineo: "
+                +getTipoSangue()+"\r\nNome da Doença: "+getNomeDoença()+"\r\nRegistro SUS: "+getRegSUS();
+             
+    }
+    public String getSalvar(){
+        return salvar;
+    }
 
     public String getNome() {
         return nome;
@@ -134,6 +143,7 @@ public class Metodos {
         this.nomeDoença = nomeDoença;
     }
     
+        
     public String nome;
     public String nomePai;
     public String nomeMae;
@@ -148,5 +158,6 @@ public class Metodos {
     public Integer regSUS;
     public String nomeDoença;
     public String tipoSangue;
+    public String salvar;
 
 }

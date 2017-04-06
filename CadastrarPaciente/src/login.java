@@ -1,7 +1,3 @@
-
-import javax.swing.JInternalFrame;
-import sun.awt.windows.WToolkit;
-
 public class login extends javax.swing.JFrame {
     
       public login() {
