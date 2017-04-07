@@ -12,11 +12,11 @@ public class Salvar {
      
     Metodos mt = new Metodos();
 
-    public void gravarArquivo(String arquivo) {
-        
-        String nomeArquivo = "oi";
-        //textoArquivo = getSalvar();
-        JOptionPane.showMessageDialog(null, arquivo);
+    public void gravarArquivo(String arquivo, String nomeArquivo) {
+        //String nomeArquivo = Integer.toString(mt.getCpf());
+       // String nomeArquivo = "ooii";
+              JOptionPane.showMessageDialog(null, arquivo);
+        //JOptionPane.showMessageDialog(null, arquivo);
      
 
         

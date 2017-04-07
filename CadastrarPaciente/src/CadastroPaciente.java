@@ -15,7 +15,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     public CadastroPaciente() {
         initComponents();
-        //this.setExtendedState(MAXIMIZED_BOTH);
+        this.setExtendedState(MAXIMIZED_BOTH);
         jInternalFrameInformaçõesPessoais.setVisible(false);
         jInternalFrameLocalizacao.setVisible(false);
         jInternalFrameFichaTecnica.setVisible(false);
@@ -85,6 +85,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setMaximumSize(new java.awt.Dimension(200, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
@@ -97,8 +98,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 0, 0);
 
         jInternalFrameInformaçõesPessoais.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jInternalFrameInformaçõesPessoais.setTitle("Informações pessoais");
@@ -151,12 +155,18 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jComboBoxsexo.setBounds(117, 37, 81, 20);
         jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldidade);
         jTextFieldidade.setBounds(117, 63, 218, 20);
+
+        jTextFieldCPF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldCPF);
         jTextFieldCPF.setBounds(117, 89, 218, 20);
         jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnomepai);
         jTextFieldnomepai.setBounds(117, 115, 218, 20);
         jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnomemae);
         jTextFieldnomemae.setBounds(117, 146, 218, 20);
+
+        getContentPane().add(jInternalFrameInformaçõesPessoais);
+        jInternalFrameInformaçõesPessoais.setBounds(18, 20, 360, 440);
+        jInternalFrameInformaçõesPessoais.getAccessibleContext().setAccessibleDescription("");
 
         jInternalFrameFichaTecnica.setTitle("Ficha técnica");
         jInternalFrameFichaTecnica.setVisible(true);
@@ -208,6 +218,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
         });
         jInternalFrameFichaTecnica.getContentPane().add(jButtonAnterior2);
         jButtonAnterior2.setBounds(201, 204, 71, 23);
+
+        getContentPane().add(jInternalFrameFichaTecnica);
+        jInternalFrameFichaTecnica.setBounds(680, 20, 328, 440);
 
         jInternalFrameLocalizacao.setTitle("Informações de localização");
         jInternalFrameLocalizacao.setVisible(true);
@@ -308,6 +321,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
                     .addComponent(jButtonAnterior)))
         );
 
+        getContentPane().add(jInternalFrameLocalizacao);
+        jInternalFrameLocalizacao.setBounds(380, 20, 294, 440);
+
         jMenu1.setText("Cadastro");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,30 +357,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jInternalFrameInformaçõesPessoais, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jInternalFrameLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jInternalFrameFichaTecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jInternalFrameInformaçõesPessoais, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrameLocalizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInternalFrameFichaTecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-
-        jInternalFrameInformaçõesPessoais.getAccessibleContext().setAccessibleDescription("");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -389,9 +381,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
         met.setNomeDoença(jTextFieldNomeDoença.getText());
         met.setRegSUS(Integer.parseInt(jTextFieldRegSUS.getText()));
         
+        String nome = Integer.toString(met.getCpf());
         met.setSalvar();
-        //JOptionPane.showMessageDialog(null, met.getSalvar());
-        salvar.gravarArquivo(met.getSalvar());
+        salvar.gravarArquivo(met.getSalvar(), nome);
         jInternalFrameFichaTecnica.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -429,7 +421,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
         } catch (NumberFormatException numberEx) {
             met.setIdade(0);
             numberEx.printStackTrace();
-        }
+        } 
+        
         jInternalFrameInformaçõesPessoais.setVisible(false);
         jInternalFrameLocalizacao.setVisible(true);
     }//GEN-LAST:event_jButtonproximoActionPerformed
@@ -441,18 +434,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void jMenuItemBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBuscarPacienteActionPerformed
 
-       
-//Define que apenar diretórios podem ser selecionados
-
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-//Exibe o diálogo. Deve ser passado por parâmetro o JFrame de origem.
 
         fc.showOpenDialog(this);
-//Captura o objeto File que representa o diretório selecionado.
-        File selFile = fc.getSelectedFile();
-//Mostra o caminho do diretório
 
-        //System.out.println (selFile.getAbsolutePath());
+        File selFile = fc.getSelectedFile();
+
+        System.out.println (selFile.getAbsolutePath());
         String sb = ler.lerArquivo(selFile);
         JOptionPane.showMessageDialog(null, sb);
     }//GEN-LAST:event_jMenuItemBuscarPacienteActionPerformed
