@@ -24,7 +24,8 @@ public class Metodos {
     public void  setSalvar(){
         this.salvar = "Nome: "+getNome()+"\r\nSexo: "+getSexo()+"\r\nIdade: "+getIdade()+"\r\nCPF: "+getCpf()+"\r\nNome do Pai: "+getNomePai()+"\r\nNome da Mãe: "+getNomeMae()
                 +"\r\nEstado: "+getEstado()+"\r\nCidade: "+getCidade()+"\r\nBairro: "+getBairro()+"\r\nEmail: "+getEmail()+"\r\nTelefone: "+getTelefone()+"\r\nTipo Sanguineo: "
-                +getTipoSangue()+"\r\nNome da Doença: "+getNomeDoença()+"\r\nRegistro SUS: "+getRegSUS();
+                +getTipoSangue()+"\r\nNome da Doença: "+getNomeDoença()+"\r\nRegistro SUS: "+getRegSUS()+"\r\nAltur: "
+                +getAltura()+"\r\nPeso: "+getPeso();
              
     }
     public String getSalvar(){
@@ -143,7 +144,22 @@ public class Metodos {
         this.nomeDoença = nomeDoença;
     }
     
-        
+    public float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(float altura) {
+        this.altura = altura;
+    }
+
+    public float getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso = peso;
+    }
+    
     public String nome;
     public String nomePai;
     public String nomeMae;
@@ -159,5 +175,8 @@ public class Metodos {
     public String nomeDoença;
     public String tipoSangue;
     public String salvar;
+    public float altura;
+    public float peso;
 
+    
 }

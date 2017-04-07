@@ -283,39 +283,105 @@
         </Constraint>
       </Constraints>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelAltura" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="jLabelPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jTextFieldAltura" min="-2" pref="95" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jTextFieldPeso" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+                  <Component id="jButtonSalvar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="jButtonCancelar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="jButtonAnterior2" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabelNomedoença" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jTextFieldNomeDoença" min="-2" pref="173" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelTipoSangue" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                      <Component id="jLabelrRegSUS" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jTextFieldRegSUS" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="jComboBoxTipoSangue" min="-2" pref="58" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelrRegSUS" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldRegSUS" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelTipoSangue" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxTipoSangue" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelNomedoença" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNomeDoença" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jButtonSalvar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonCancelar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonAnterior2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabelTipoSangue">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tipo sangu&#xed;neo"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="14" width="85" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelNomedoen&#xe7;a">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nome da doen&#xe7;a"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="37" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelrRegSUS">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registro SUS"/>
           </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="63" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBoxTipoSangue">
           <Properties>
@@ -334,25 +400,10 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="99" y="11" width="58" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNomeDoen&#xe7;a">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="37" width="173" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldRegSUS">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="63" width="173" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonSalvar">
           <Properties>
@@ -361,11 +412,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSalvarActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="51" y="204" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonCancelar">
           <Properties>
@@ -374,11 +420,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="120" y="204" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonAnterior2">
           <Properties>
@@ -387,11 +428,20 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnterior2ActionPerformed"/>
           </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="201" y="204" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelAltura">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Altura"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldAltura">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelPeso">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Peso"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldPeso">
         </Component>
       </SubComponents>
     </Container>
@@ -411,16 +461,6 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabelestado" min="-2" pref="57" max="-2" attributes="0"/>
-                          <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
-                          <Component id="jTextFieldestado" min="-2" pref="183" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jLabelcidade" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                          <Component id="jTextFieldcidade" min="-2" pref="183" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabelbairro" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
@@ -443,6 +483,17 @@
                               <Component id="jTextFieldemail" min="-2" pref="183" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelcidade" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Component id="jLabelestado" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jTextFieldcidade" min="-2" pref="183" max="-2" attributes="0"/>
+                              <Component id="jComboBoxEstados" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -451,15 +502,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                          <Component id="jLabelestado" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jTextFieldestado" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelestado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxEstados" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
@@ -526,8 +574,6 @@
             <Property name="text" type="java.lang.String" value="Bairro"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldestado">
-        </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldcidade">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldbairro">
@@ -551,6 +597,45 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAnteriorActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBoxEstados">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="28">
+                <StringItem index="0" value="AC  &#x9;"/>
+                <StringItem index="1" value="AL &#x9; "/>
+                <StringItem index="2" value="AP &#x9; "/>
+                <StringItem index="3" value="AM &#x9; "/>
+                <StringItem index="4" value="BA &#x9; "/>
+                <StringItem index="5" value="CE &#x9; "/>
+                <StringItem index="6" value="DF"/>
+                <StringItem index="7" value="ES &#x9; "/>
+                <StringItem index="8" value="GO &#x9; "/>
+                <StringItem index="9" value="MA &#x9; "/>
+                <StringItem index="10" value="MT &#x9; "/>
+                <StringItem index="11" value="MS &#x9; "/>
+                <StringItem index="12" value="MG &#x9; "/>
+                <StringItem index="13" value="PA &#x9;  &#x9;"/>
+                <StringItem index="14" value="PB &#x9;  "/>
+                <StringItem index="15" value="PR &#x9; "/>
+                <StringItem index="16" value="PE &#x9; "/>
+                <StringItem index="17" value="PI &#x9; "/>
+                <StringItem index="18" value="RJ &#x9; "/>
+                <StringItem index="19" value="RN &#x9; "/>
+                <StringItem index="20" value="RS &#x9; "/>
+                <StringItem index="21" value="RO &#x9; "/>
+                <StringItem index="22" value="RR &#x9; "/>
+                <StringItem index="23" value="SC &#x9; "/>
+                <StringItem index="24" value="SP &#x9; "/>
+                <StringItem index="25" value="SE &#x9; "/>
+                <StringItem index="26" value="TO"/>
+                <StringItem index="27" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

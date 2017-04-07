@@ -51,19 +51,23 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jButtonSalvar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButtonAnterior2 = new javax.swing.JButton();
+        jLabelAltura = new javax.swing.JLabel();
+        jTextFieldAltura = new javax.swing.JTextField();
+        jLabelPeso = new javax.swing.JLabel();
+        jTextFieldPeso = new javax.swing.JTextField();
         jInternalFrameLocalizacao = new javax.swing.JInternalFrame();
         jLabelcidade = new javax.swing.JLabel();
         jLabelestado = new javax.swing.JLabel();
         jLabelemail = new javax.swing.JLabel();
         jLabeltelefone = new javax.swing.JLabel();
         jLabelbairro = new javax.swing.JLabel();
-        jTextFieldestado = new javax.swing.JTextField();
         jTextFieldcidade = new javax.swing.JTextField();
         jTextFieldbairro = new javax.swing.JTextField();
         jTextFieldemail = new javax.swing.JTextField();
         jTextFieldtelefone = new javax.swing.JTextField();
         jButtonproximo2 = new javax.swing.JButton();
         jButtonAnterior = new javax.swing.JButton();
+        jComboBoxEstados = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemCadastrar = new javax.swing.JMenuItem();
@@ -170,27 +174,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         jInternalFrameFichaTecnica.setTitle("Ficha técnica");
         jInternalFrameFichaTecnica.setVisible(true);
-        jInternalFrameFichaTecnica.getContentPane().setLayout(null);
 
         jLabelTipoSangue.setText("Tipo sanguíneo");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelTipoSangue);
-        jLabelTipoSangue.setBounds(10, 14, 85, 14);
 
         jLabelNomedoença.setText("Nome da doença");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelNomedoença);
-        jLabelNomedoença.setBounds(10, 37, 80, 14);
 
         jLabelrRegSUS.setText("Registro SUS");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelrRegSUS);
-        jLabelrRegSUS.setBounds(10, 63, 62, 14);
 
         jComboBoxTipoSangue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
-        jInternalFrameFichaTecnica.getContentPane().add(jComboBoxTipoSangue);
-        jComboBoxTipoSangue.setBounds(99, 11, 58, 20);
-        jInternalFrameFichaTecnica.getContentPane().add(jTextFieldNomeDoença);
-        jTextFieldNomeDoença.setBounds(100, 37, 173, 20);
-        jInternalFrameFichaTecnica.getContentPane().add(jTextFieldRegSUS);
-        jTextFieldRegSUS.setBounds(100, 63, 173, 20);
 
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -198,8 +189,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonSalvarActionPerformed(evt);
             }
         });
-        jInternalFrameFichaTecnica.getContentPane().add(jButtonSalvar);
-        jButtonSalvar.setBounds(51, 204, 63, 23);
 
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -207,8 +196,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        jInternalFrameFichaTecnica.getContentPane().add(jButtonCancelar);
-        jButtonCancelar.setBounds(120, 204, 75, 23);
 
         jButtonAnterior2.setText("Anterior");
         jButtonAnterior2.addActionListener(new java.awt.event.ActionListener() {
@@ -216,8 +203,77 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonAnterior2ActionPerformed(evt);
             }
         });
-        jInternalFrameFichaTecnica.getContentPane().add(jButtonAnterior2);
-        jButtonAnterior2.setBounds(201, 204, 71, 23);
+
+        jLabelAltura.setText("Altura");
+
+        jLabelPeso.setText("Peso");
+
+        javax.swing.GroupLayout jInternalFrameFichaTecnicaLayout = new javax.swing.GroupLayout(jInternalFrameFichaTecnica.getContentPane());
+        jInternalFrameFichaTecnica.getContentPane().setLayout(jInternalFrameFichaTecnicaLayout);
+        jInternalFrameFichaTecnicaLayout.setHorizontalGroup(
+            jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPeso))
+                .addGap(28, 28, 28)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addComponent(jTextFieldAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(132, 132, 132))
+                    .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jButtonSalvar)
+                .addGap(6, 6, 6)
+                .addComponent(jButtonCancelar)
+                .addGap(6, 6, 6)
+                .addComponent(jButtonAnterior2))
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelNomedoença)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextFieldNomeDoença, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTipoSangue, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelrRegSUS))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldRegSUS, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxTipoSangue, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jInternalFrameFichaTecnicaLayout.setVerticalGroup(
+            jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelrRegSUS)
+                    .addComponent(jTextFieldRegSUS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTipoSangue)
+                    .addComponent(jComboBoxTipoSangue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNomedoença)
+                    .addComponent(jTextFieldNomeDoença, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAltura)
+                    .addComponent(jTextFieldAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPeso)
+                    .addComponent(jTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonCancelar)
+                    .addComponent(jButtonAnterior2)))
+        );
 
         getContentPane().add(jInternalFrameFichaTecnica);
         jInternalFrameFichaTecnica.setBounds(680, 20, 328, 440);
@@ -249,20 +305,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
+        jComboBoxEstados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC  \t", "AL \t ", "AP \t ", "AM \t ", "BA \t ", "CE \t ", "DF", "ES \t ", "GO \t ", "MA \t ", "MT \t ", "MS \t ", "MG \t ", "PA \t  \t", "PB \t  ", "PR \t ", "PE \t ", "PI \t ", "RJ \t ", "RN \t ", "RS \t ", "RO \t ", "RR \t ", "SC \t ", "SP \t ", "SE \t ", "TO", " " }));
+
         javax.swing.GroupLayout jInternalFrameLocalizacaoLayout = new javax.swing.GroupLayout(jInternalFrameLocalizacao.getContentPane());
         jInternalFrameLocalizacao.getContentPane().setLayout(jInternalFrameLocalizacaoLayout);
         jInternalFrameLocalizacaoLayout.setHorizontalGroup(
             jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
                 .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
-                        .addComponent(jLabelestado, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jTextFieldestado, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
-                        .addComponent(jLabelcidade, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(jTextFieldcidade, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
                         .addComponent(jLabelbairro)
                         .addGap(53, 53, 53)
@@ -279,18 +329,24 @@ public class CadastroPaciente extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextFieldtelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldemail, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTextFieldemail, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelcidade, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelestado, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldcidade, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxEstados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(14, 14, 14))
         );
         jInternalFrameLocalizacaoLayout.setVerticalGroup(
             jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabelestado))
-                    .addComponent(jTextFieldestado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelestado)
+                    .addComponent(jComboBoxEstados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(jInternalFrameLocalizacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jInternalFrameLocalizacaoLayout.createSequentialGroup()
@@ -380,10 +436,12 @@ public class CadastroPaciente extends javax.swing.JFrame {
         met.setTipoSangue(jComboBoxTipoSangue.getSelectedItem().toString());
         met.setNomeDoença(jTextFieldNomeDoença.getText());
         met.setRegSUS(Integer.parseInt(jTextFieldRegSUS.getText()));
+        met.setAltura(Float.parseFloat(jTextFieldAltura.getText()));
+        met.setPeso(Float.parseFloat(jTextFieldPeso.getText()));
         
-        String nome = Integer.toString(met.getCpf());
+        //String nome = Integer.toString(met.getCpf());
         met.setSalvar();
-        salvar.gravarArquivo(met.getSalvar(), nome);
+        salvar.gravarArquivo(met.getSalvar(), met.getNome());
         jInternalFrameFichaTecnica.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -393,8 +451,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAnteriorActionPerformed
 
     private void jButtonproximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximo2ActionPerformed
+                 
         try {
-            met.setEstado(jTextFieldestado.getText());
+            met.setEstado(jComboBoxEstados.getSelectedItem().toString());
             met.setCidade(jTextFieldcidade.getText());
             met.setBairro(jTextFieldbairro.getText());
             met.setEmail(jTextFieldemail.getText());
@@ -410,7 +469,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonproximo2ActionPerformed
 
     private void jButtonproximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximoActionPerformed
-
+           
+        
         try {
             met.setNome(jTextFieldnome.getText());
             met.setSexo(jComboBoxsexo.getSelectedItem().toString());
@@ -480,14 +540,17 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JButton jButtonproximo;
     private javax.swing.JButton jButtonproximo2;
+    private javax.swing.JComboBox<String> jComboBoxEstados;
     private javax.swing.JComboBox<String> jComboBoxTipoSangue;
     private javax.swing.JComboBox<String> jComboBoxsexo;
     private javax.swing.JInternalFrame jInternalFrameContato;
     private javax.swing.JInternalFrame jInternalFrameFichaTecnica;
     private javax.swing.JInternalFrame jInternalFrameInformaçõesPessoais;
     private javax.swing.JInternalFrame jInternalFrameLocalizacao;
+    private javax.swing.JLabel jLabelAltura;
     private javax.swing.JLabel jLabelCPF;
     private javax.swing.JLabel jLabelNomedoença;
+    private javax.swing.JLabel jLabelPeso;
     private javax.swing.JLabel jLabelTipoSangue;
     private javax.swing.JLabel jLabelbairro;
     private javax.swing.JLabel jLabelcidade;
@@ -507,13 +570,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemBuscarPaciente;
     private javax.swing.JMenuItem jMenuItemCadastrar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldAltura;
     private javax.swing.JTextField jTextFieldCPF;
     private javax.swing.JTextField jTextFieldNomeDoença;
+    private javax.swing.JTextField jTextFieldPeso;
     private javax.swing.JTextField jTextFieldRegSUS;
     private javax.swing.JTextField jTextFieldbairro;
     private javax.swing.JTextField jTextFieldcidade;
     private javax.swing.JTextField jTextFieldemail;
-    private javax.swing.JTextField jTextFieldestado;
     private javax.swing.JTextField jTextFieldidade;
     private javax.swing.JTextField jTextFieldnome;
     private javax.swing.JTextField jTextFieldnomemae;
