@@ -37,24 +37,24 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jButtonproximo = new javax.swing.JButton();
         jTextFieldnome = new javax.swing.JTextField();
         jComboBoxsexo = new javax.swing.JComboBox<>();
-        jTextFieldidade = new javax.swing.JTextField();
-        jTextFieldCPF = new javax.swing.JTextField();
         jTextFieldnomepai = new javax.swing.JTextField();
         jTextFieldnomemae = new javax.swing.JTextField();
+        jFormattedTextFieldIdade = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCPF = new javax.swing.JFormattedTextField();
         jInternalFrameFichaTecnica = new javax.swing.JInternalFrame();
         jLabelTipoSangue = new javax.swing.JLabel();
         jLabelNomedoença = new javax.swing.JLabel();
         jLabelrRegSUS = new javax.swing.JLabel();
         jComboBoxTipoSangue = new javax.swing.JComboBox<>();
         jTextFieldNomeDoença = new javax.swing.JTextField();
-        jTextFieldRegSUS = new javax.swing.JTextField();
         jButtonSalvar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jButtonAnterior2 = new javax.swing.JButton();
         jLabelAltura = new javax.swing.JLabel();
-        jTextFieldAltura = new javax.swing.JTextField();
         jLabelPeso = new javax.swing.JLabel();
-        jTextFieldPeso = new javax.swing.JTextField();
+        jFormattedTextFieldAltura = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldPeso = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldSUS = new javax.swing.JFormattedTextField();
         jInternalFrameLocalizacao = new javax.swing.JInternalFrame();
         jLabelcidade = new javax.swing.JLabel();
         jLabelestado = new javax.swing.JLabel();
@@ -64,10 +64,10 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jTextFieldcidade = new javax.swing.JTextField();
         jTextFieldbairro = new javax.swing.JTextField();
         jTextFieldemail = new javax.swing.JTextField();
-        jTextFieldtelefone = new javax.swing.JTextField();
         jButtonproximo2 = new javax.swing.JButton();
         jButtonAnterior = new javax.swing.JButton();
         jComboBoxEstados = new javax.swing.JComboBox<>();
+        jFormattedTextFieldTelefone = new javax.swing.JFormattedTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemCadastrar = new javax.swing.JMenuItem();
@@ -118,31 +118,18 @@ public class CadastroPaciente extends javax.swing.JFrame {
             e1.printStackTrace();
         }
         jInternalFrameInformaçõesPessoais.setVisible(true);
-        jInternalFrameInformaçõesPessoais.getContentPane().setLayout(null);
 
         jLabelnome.setText("Nome");
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelnome);
-        jLabelnome.setBounds(18, 14, 56, 14);
 
         jLabelidade.setText("Idade");
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelidade);
-        jLabelidade.setBounds(18, 66, 71, 14);
 
         jLabelsexo.setText("Sexo");
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelsexo);
-        jLabelsexo.setBounds(18, 40, 24, 14);
 
         jLabelCPF.setText("CPF");
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelCPF);
-        jLabelCPF.setBounds(18, 92, 19, 14);
 
         jLabelnomepai.setText("Nome do pai");
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelnomepai);
-        jLabelnomepai.setBounds(18, 115, 59, 14);
 
         jLabelnomemae.setText("Nome da mãe");
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelnomemae);
-        jLabelnomemae.setBounds(18, 149, 65, 14);
 
         jButtonproximo.setText("Próximo");
         jButtonproximo.addActionListener(new java.awt.event.ActionListener() {
@@ -150,24 +137,97 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonproximoActionPerformed(evt);
             }
         });
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jButtonproximo);
-        jButtonproximo.setBounds(117, 172, 100, 23);
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnome);
-        jTextFieldnome.setBounds(117, 11, 218, 20);
 
         jComboBoxsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jComboBoxsexo);
-        jComboBoxsexo.setBounds(117, 37, 81, 20);
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldidade);
-        jTextFieldidade.setBounds(117, 63, 218, 20);
 
-        jTextFieldCPF.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldCPF);
-        jTextFieldCPF.setBounds(117, 89, 218, 20);
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnomepai);
-        jTextFieldnomepai.setBounds(117, 115, 218, 20);
-        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnomemae);
-        jTextFieldnomemae.setBounds(117, 146, 218, 20);
+        try {
+            jFormattedTextFieldIdade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jFormattedTextFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        javax.swing.GroupLayout jInternalFrameInformaçõesPessoaisLayout = new javax.swing.GroupLayout(jInternalFrameInformaçõesPessoais.getContentPane());
+        jInternalFrameInformaçõesPessoais.getContentPane().setLayout(jInternalFrameInformaçõesPessoaisLayout);
+        jInternalFrameInformaçõesPessoaisLayout.setHorizontalGroup(
+            jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelnome, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelsexo)
+                        .addGap(75, 75, 75)
+                        .addComponent(jComboBoxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelidade, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelCPF))
+                        .addGap(28, 28, 28)
+                        .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jFormattedTextFieldIdade)
+                            .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)))
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelnomepai)
+                        .addGap(40, 40, 40)
+                        .addComponent(jTextFieldnomepai, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelnomemae)
+                        .addGap(34, 34, 34)
+                        .addComponent(jTextFieldnomemae, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jButtonproximo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jInternalFrameInformaçõesPessoaisLayout.setVerticalGroup(
+            jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabelnome))
+                    .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabelsexo))
+                    .addComponent(jComboBoxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelidade)
+                    .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCPF)
+                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelnomepai)
+                    .addComponent(jTextFieldnomepai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
+                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabelnomemae))
+                    .addComponent(jTextFieldnomemae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addComponent(jButtonproximo))
+        );
 
         getContentPane().add(jInternalFrameInformaçõesPessoais);
         jInternalFrameInformaçõesPessoais.setBounds(20, 20, 340, 240);
@@ -175,27 +235,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         jInternalFrameFichaTecnica.setTitle("Ficha técnica");
         jInternalFrameFichaTecnica.setVisible(true);
-        jInternalFrameFichaTecnica.getContentPane().setLayout(null);
 
         jLabelTipoSangue.setText("Tipo sanguíneo");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelTipoSangue);
-        jLabelTipoSangue.setBounds(10, 53, 85, 14);
 
         jLabelNomedoença.setText("Nome da doença");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelNomedoença);
-        jLabelNomedoença.setBounds(10, 79, 80, 14);
 
         jLabelrRegSUS.setText("Registro SUS");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelrRegSUS);
-        jLabelrRegSUS.setBounds(10, 27, 62, 14);
 
         jComboBoxTipoSangue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
-        jInternalFrameFichaTecnica.getContentPane().add(jComboBoxTipoSangue);
-        jComboBoxTipoSangue.setBounds(99, 50, 58, 20);
-        jInternalFrameFichaTecnica.getContentPane().add(jTextFieldNomeDoença);
-        jTextFieldNomeDoença.setBounds(100, 76, 173, 20);
-        jInternalFrameFichaTecnica.getContentPane().add(jTextFieldRegSUS);
-        jTextFieldRegSUS.setBounds(99, 24, 173, 20);
 
         jButtonSalvar.setText("Salvar");
         jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -203,8 +250,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonSalvarActionPerformed(evt);
             }
         });
-        jInternalFrameFichaTecnica.getContentPane().add(jButtonSalvar);
-        jButtonSalvar.setBounds(42, 171, 63, 23);
 
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -212,8 +257,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-        jInternalFrameFichaTecnica.getContentPane().add(jButtonCancelar);
-        jButtonCancelar.setBounds(111, 171, 75, 23);
 
         jButtonAnterior2.setText("Anterior");
         jButtonAnterior2.addActionListener(new java.awt.event.ActionListener() {
@@ -221,20 +264,106 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonAnterior2ActionPerformed(evt);
             }
         });
-        jInternalFrameFichaTecnica.getContentPane().add(jButtonAnterior2);
-        jButtonAnterior2.setBounds(192, 171, 71, 23);
 
         jLabelAltura.setText("Altura");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelAltura);
-        jLabelAltura.setBounds(10, 110, 62, 14);
-        jInternalFrameFichaTecnica.getContentPane().add(jTextFieldAltura);
-        jTextFieldAltura.setBounds(100, 107, 95, 20);
 
         jLabelPeso.setText("Peso");
-        jInternalFrameFichaTecnica.getContentPane().add(jLabelPeso);
-        jLabelPeso.setBounds(10, 136, 23, 14);
-        jInternalFrameFichaTecnica.getContentPane().add(jTextFieldPeso);
-        jTextFieldPeso.setBounds(100, 133, 95, 20);
+
+        try {
+            jFormattedTextFieldAltura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#,##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jFormattedTextFieldPeso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            jFormattedTextFieldSUS.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###############")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        javax.swing.GroupLayout jInternalFrameFichaTecnicaLayout = new javax.swing.GroupLayout(jInternalFrameFichaTecnica.getContentPane());
+        jInternalFrameFichaTecnica.getContentPane().setLayout(jInternalFrameFichaTecnicaLayout);
+        jInternalFrameFichaTecnicaLayout.setHorizontalGroup(
+            jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabelNomedoença)
+                        .addGap(10, 10, 10)
+                        .addComponent(jTextFieldNomeDoença, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jButtonSalvar)
+                        .addGap(6, 6, 6)
+                        .addComponent(jButtonCancelar)
+                        .addGap(6, 6, 6)
+                        .addComponent(jButtonAnterior2))
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelPeso))
+                        .addGap(28, 28, 28)
+                        .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jFormattedTextFieldAltura, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                            .addComponent(jFormattedTextFieldPeso)))
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelTipoSangue, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelrRegSUS))
+                        .addGap(4, 4, 4)
+                        .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxTipoSangue, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldSUS))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jInternalFrameFichaTecnicaLayout.setVerticalGroup(
+            jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelrRegSUS)
+                    .addComponent(jFormattedTextFieldSUS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabelTipoSangue))
+                    .addComponent(jComboBoxTipoSangue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabelNomedoença))
+                    .addComponent(jTextFieldNomeDoença, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabelAltura))
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabelPeso))
+                    .addGroup(jInternalFrameFichaTecnicaLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21)
+                .addGroup(jInternalFrameFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonCancelar)
+                    .addComponent(jButtonAnterior2)))
+        );
 
         getContentPane().add(jInternalFrameFichaTecnica);
         jInternalFrameFichaTecnica.setBounds(660, 20, 290, 240);
@@ -268,8 +397,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jTextFieldbairro.setBounds(81, 67, 183, 20);
         jInternalFrameLocalizacao.getContentPane().add(jTextFieldemail);
         jTextFieldemail.setBounds(81, 93, 183, 20);
-        jInternalFrameLocalizacao.getContentPane().add(jTextFieldtelefone);
-        jTextFieldtelefone.setBounds(81, 124, 183, 20);
 
         jButtonproximo2.setText("Próximo");
         jButtonproximo2.addActionListener(new java.awt.event.ActionListener() {
@@ -292,6 +419,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jComboBoxEstados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC  \t", "AL \t ", "AP \t ", "AM \t ", "BA \t ", "CE \t ", "DF", "ES \t ", "GO \t ", "MA \t ", "MT \t ", "MS \t ", "MG \t ", "PA \t  \t", "PB \t  ", "PR \t ", "PE \t ", "PI \t ", "RJ \t ", "RN \t ", "RS \t ", "RO \t ", "RR \t ", "SC \t ", "SP \t ", "SE \t ", "TO", " " }));
         jInternalFrameLocalizacao.getContentPane().add(jComboBoxEstados);
         jComboBoxEstados.setBounds(81, 15, 47, 20);
+
+        try {
+            jFormattedTextFieldTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jInternalFrameLocalizacao.getContentPane().add(jFormattedTextFieldTelefone);
+        jFormattedTextFieldTelefone.setBounds(80, 120, 180, 20);
 
         getContentPane().add(jInternalFrameLocalizacao);
         jInternalFrameLocalizacao.setBounds(370, 20, 280, 240);
@@ -370,9 +505,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
         
         met.setTipoSangue(jComboBoxTipoSangue.getSelectedItem().toString());
         met.setNomeDoença(jTextFieldNomeDoença.getText());
-        met.setRegSUS(Integer.parseInt(jTextFieldRegSUS.getText()));
-        met.setAltura(Float.parseFloat(jTextFieldAltura.getText()));
-        met.setPeso(Float.parseFloat(jTextFieldPeso.getText()));
+        met.setRegSUS(jFormattedTextFieldSUS.getText());
+        met.setAltura(jFormattedTextFieldAltura.getText());
+        met.setPeso(jFormattedTextFieldPeso.getText());
         
         //String nome = Integer.toString(met.getCpf());
         met.setSalvar();
@@ -387,18 +522,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void jButtonproximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximo2ActionPerformed
                  
-        try {
+       
             met.setEstado(jComboBoxEstados.getSelectedItem().toString());
             met.setCidade(jTextFieldcidade.getText());
             met.setBairro(jTextFieldbairro.getText());
             met.setEmail(jTextFieldemail.getText());
-            met.setTelefone(Integer.parseInt(jTextFieldtelefone.getText()));
-        } catch (NumberFormatException numberEx) {
-            met.setTelefone(0);
-            numberEx.printStackTrace();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro \n " + e.getMessage());
-        }
+            met.setTelefone(jFormattedTextFieldTelefone.getText());
+        
         jInternalFrameLocalizacao.setVisible(false);
         jInternalFrameFichaTecnica.setVisible(true);
     }//GEN-LAST:event_jButtonproximo2ActionPerformed
@@ -406,18 +536,16 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private void jButtonproximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximoActionPerformed
            
         
-        try {
+    
             met.setNome(jTextFieldnome.getText());
             met.setSexo(jComboBoxsexo.getSelectedItem().toString());
-            met.setIdade(Integer.parseInt(jTextFieldidade.getText()));
-            met.setCpf(Integer.parseInt(jTextFieldCPF.getText()));
+            met.setIdade(Integer.parseInt(jFormattedTextFieldIdade.getText()));
+            met.setCpf(jFormattedTextFieldCPF.getText());
             met.setNomePai(jTextFieldnomepai.getText());
             met.setNomeMae(jTextFieldnomemae.getText());
-        } catch (NumberFormatException numberEx) {
-            met.setIdade(0);
-            numberEx.printStackTrace();
-        } 
         
+            met.setIdade(0);
+            
         jInternalFrameInformaçõesPessoais.setVisible(false);
         jInternalFrameLocalizacao.setVisible(true);
     }//GEN-LAST:event_jButtonproximoActionPerformed
@@ -490,6 +618,12 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxEstados;
     private javax.swing.JComboBox<String> jComboBoxTipoSangue;
     private javax.swing.JComboBox<String> jComboBoxsexo;
+    private javax.swing.JFormattedTextField jFormattedTextFieldAltura;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
+    private javax.swing.JFormattedTextField jFormattedTextFieldIdade;
+    private javax.swing.JFormattedTextField jFormattedTextFieldPeso;
+    private javax.swing.JFormattedTextField jFormattedTextFieldSUS;
+    private javax.swing.JFormattedTextField jFormattedTextFieldTelefone;
     private javax.swing.JInternalFrame jInternalFrameContato;
     private javax.swing.JInternalFrame jInternalFrameFichaTecnica;
     private javax.swing.JInternalFrame jInternalFrameInformaçõesPessoais;
@@ -518,19 +652,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemSobre;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextFieldAltura;
-    private javax.swing.JTextField jTextFieldCPF;
     private javax.swing.JTextField jTextFieldNomeDoença;
-    private javax.swing.JTextField jTextFieldPeso;
-    private javax.swing.JTextField jTextFieldRegSUS;
     private javax.swing.JTextField jTextFieldbairro;
     private javax.swing.JTextField jTextFieldcidade;
     private javax.swing.JTextField jTextFieldemail;
-    private javax.swing.JTextField jTextFieldidade;
     private javax.swing.JTextField jTextFieldnome;
     private javax.swing.JTextField jTextFieldnomemae;
     private javax.swing.JTextField jTextFieldnomepai;
-    private javax.swing.JTextField jTextFieldtelefone;
     // End of variables declaration//GEN-END:variables
 
 }

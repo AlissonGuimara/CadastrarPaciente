@@ -5,7 +5,8 @@ public class Metodos {
      
     }
 
-    public Metodos(String nome, String nomePai, String nomeMae, String sexo, String email, String cidade, String estado, int telefone, int Idade, int cpf, int regSUS, String nomeDoença, String tipoSangue, String bairro) {
+    public Metodos(String nome, String nomePai, String nomeMae, String sexo, String email, String cidade, String estado, 
+    String telefone, int Idade, String cpf, String regSUS, String nomeDoença, String tipoSangue, String bairro, String altura, String peso) {
         this.nome = nome;
         this.nomePai = nomePai;
         this.nomeMae = nomeMae;
@@ -20,6 +21,8 @@ public class Metodos {
         this.nomeDoença = nomeDoença;
         this.tipoSangue = tipoSangue;
         this.bairro = bairro;
+        this.altura = altura;
+        this.peso = peso;
     }
     public void  setSalvar(){
         this.salvar = "Nome: "+getNome()+"\r\nSexo: "+getSexo()+"\r\nIdade: "+getIdade()+"\r\nCPF: "+getCpf()+"\r\nNome do Pai: "+getNomePai()+"\r\nNome da Mãe: "+getNomeMae()
@@ -88,11 +91,11 @@ public class Metodos {
         this.estado = estado;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
@@ -104,19 +107,19 @@ public class Metodos {
         this.Idade = Idade;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
-    public int getRegSUS() {
+    public String getRegSUS() {
         return regSUS;
     }
 
-    public void setRegSUS(Integer regSUS) {
+    public void setRegSUS(String regSUS) {
         this.regSUS = regSUS;
     }
 
@@ -144,19 +147,19 @@ public class Metodos {
         this.nomeDoença = nomeDoença;
     }
     
-    public float getAltura() {
+    public String getAltura() {
         return altura;
     }
 
-    public void setAltura(float altura) {
+    public void setAltura(String altura) {
         this.altura = altura;
     }
 
-    public float getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
     
@@ -168,15 +171,15 @@ public class Metodos {
     public String cidade;
     public String estado;
     public String bairro;
-    public Integer telefone;
+    public String telefone;
     public Integer Idade;
-    public Integer cpf;
-    public Integer regSUS;
+    public String cpf;
+    public String regSUS;
     public String nomeDoença;
     public String tipoSangue;
     public String salvar;
-    public float altura;
-    public float peso;
+    public String altura;
+    public String peso;
 
     
 }
