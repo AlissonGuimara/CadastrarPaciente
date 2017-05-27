@@ -1,3 +1,8 @@
+package janelas;
+
+
+import janelas.CadastroPaciente;
+
 public class login extends javax.swing.JFrame {
     
       public login() {

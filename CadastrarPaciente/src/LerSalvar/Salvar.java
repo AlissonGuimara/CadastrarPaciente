@@ -1,3 +1,4 @@
+package LerSalvar;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -10,7 +11,7 @@ public class Salvar {
     //public String nomeArquivo;
     //public String textoArquivo;
      
-    Metodos mt = new Metodos();
+    //Metodos mt = new Metodos();
 
     public void gravarArquivo(String arquivo, String nomeArquivo) {
         //String nomeArquivo = Integer.toString(mt.getCpf());
@@ -50,6 +51,5 @@ public class Salvar {
             }
         }
     }
-
 }
 

@@ -1,3 +1,8 @@
+package janelas;
+import LerSalvar.Salvar;
+import LerSalvar.Ler;
+
+
 
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -5,12 +10,19 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
+import metodos.Ficha;
+import metodos.Localizacao;
+import metodos.Pessoa;
+import metodos.VarSalvar;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
-    Metodos met = new Metodos();
+    Localizacao l = new Localizacao();
     Salvar salvar = new Salvar();
     Ler ler = new Ler();
+    Pessoa p = new Pessoa();
+    Ficha f = new Ficha();
+    VarSalvar s = new VarSalvar();
     JFileChooser fc = new JFileChooser();
 
     public CadastroPaciente() {
@@ -503,15 +515,15 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         
-        met.setTipoSangue(jComboBoxTipoSangue.getSelectedItem().toString());
-        met.setNomeDoença(jTextFieldNomeDoença.getText());
-        met.setRegSUS(jFormattedTextFieldSUS.getText());
-        met.setAltura(jFormattedTextFieldAltura.getText());
-        met.setPeso(jFormattedTextFieldPeso.getText());
+        f.setTipoSangue(jComboBoxTipoSangue.getSelectedItem().toString());
+        f.setNomeDoença(jTextFieldNomeDoença.getText());
+        f.setRegSUS(jFormattedTextFieldSUS.getText());
+        f.setAltura(jFormattedTextFieldAltura.getText());
+        f.setPeso(jFormattedTextFieldPeso.getText());
         
         //String nome = Integer.toString(met.getCpf());
-        met.setSalvar();
-        salvar.gravarArquivo(met.getSalvar(), met.getNome());
+        s.setSalvar();
+        salvar.gravarArquivo(s.getSalvar(), p.getNome());
         jInternalFrameFichaTecnica.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -523,11 +535,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private void jButtonproximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximo2ActionPerformed
                  
        
-            met.setEstado(jComboBoxEstados.getSelectedItem().toString());
-            met.setCidade(jTextFieldcidade.getText());
-            met.setBairro(jTextFieldbairro.getText());
-            met.setEmail(jTextFieldemail.getText());
-            met.setTelefone(jFormattedTextFieldTelefone.getText());
+            l.setEstado(jComboBoxEstados.getSelectedItem().toString());
+            l.setCidade(jTextFieldcidade.getText());
+            l.setBairro(jTextFieldbairro.getText());
+            l.setEmail(jTextFieldemail.getText());
+            l.setTelefone(jFormattedTextFieldTelefone.getText());
         
         jInternalFrameLocalizacao.setVisible(false);
         jInternalFrameFichaTecnica.setVisible(true);
@@ -535,16 +547,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void jButtonproximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximoActionPerformed
            
-        
-    
-            met.setNome(jTextFieldnome.getText());
-            met.setSexo(jComboBoxsexo.getSelectedItem().toString());
-            met.setIdade(Integer.parseInt(jFormattedTextFieldIdade.getText()));
-            met.setCpf(jFormattedTextFieldCPF.getText());
-            met.setNomePai(jTextFieldnomepai.getText());
-            met.setNomeMae(jTextFieldnomemae.getText());
-        
-            met.setIdade(0);
+            p.setNome(jTextFieldnome.getText());
+            p.setSexo(jComboBoxsexo.getSelectedItem().toString());
+            p.setIdade(Integer.parseInt(jFormattedTextFieldIdade.getText()));
+            p.setCpf(jFormattedTextFieldCPF.getText());
+            p.setNomePai(jTextFieldnomepai.getText());
+            p.setNomeMae(jTextFieldnomemae.getText());
+            p.setIdade(0);
             
         jInternalFrameInformaçõesPessoais.setVisible(false);
         jInternalFrameLocalizacao.setVisible(true);
