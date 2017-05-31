@@ -7,8 +7,7 @@ public class Ficha {
     public Ficha (){
     }
 
-    public Ficha(
-            String regSUS, String nomeDoença, String tipoSangue, String altura, String peso) {
+    public Ficha(String regSUS, String nomeDoença, String tipoSangue, String altura, String peso) {
 
         this.regSUS = regSUS;
         this.nomeDoença = nomeDoença;

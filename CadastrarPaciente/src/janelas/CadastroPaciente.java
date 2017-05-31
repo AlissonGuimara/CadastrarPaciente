@@ -2,8 +2,6 @@ package janelas;
 import LerSalvar.Salvar;
 import LerSalvar.Ler;
 
-
-
 import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -13,7 +11,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 import metodos.Ficha;
 import metodos.Localizacao;
 import metodos.Pessoa;
-import metodos.VarSalvar;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
@@ -22,8 +19,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     Ler ler = new Ler();
     Pessoa p = new Pessoa();
     Ficha f = new Ficha();
-    VarSalvar s = new VarSalvar();
     JFileChooser fc = new JFileChooser();
+   
 
     public CadastroPaciente() {
         initComponents();
@@ -31,6 +28,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jInternalFrameInformaçõesPessoais.setVisible(false);
         jInternalFrameLocalizacao.setVisible(false);
         jInternalFrameFichaTecnica.setVisible(false);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -130,18 +128,31 @@ public class CadastroPaciente extends javax.swing.JFrame {
             e1.printStackTrace();
         }
         jInternalFrameInformaçõesPessoais.setVisible(true);
+        jInternalFrameInformaçõesPessoais.getContentPane().setLayout(null);
 
         jLabelnome.setText("Nome");
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelnome);
+        jLabelnome.setBounds(18, 14, 56, 14);
 
         jLabelidade.setText("Idade");
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelidade);
+        jLabelidade.setBounds(18, 66, 71, 14);
 
         jLabelsexo.setText("Sexo");
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelsexo);
+        jLabelsexo.setBounds(18, 40, 24, 14);
 
         jLabelCPF.setText("CPF");
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelCPF);
+        jLabelCPF.setBounds(18, 92, 19, 14);
 
         jLabelnomepai.setText("Nome do pai");
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelnomepai);
+        jLabelnomepai.setBounds(18, 112, 59, 14);
 
         jLabelnomemae.setText("Nome da mãe");
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jLabelnomemae);
+        jLabelnomemae.setBounds(18, 146, 65, 14);
 
         jButtonproximo.setText("Próximo");
         jButtonproximo.addActionListener(new java.awt.event.ActionListener() {
@@ -149,97 +160,34 @@ public class CadastroPaciente extends javax.swing.JFrame {
                 jButtonproximoActionPerformed(evt);
             }
         });
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jButtonproximo);
+        jButtonproximo.setBounds(117, 169, 100, 23);
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnome);
+        jTextFieldnome.setBounds(117, 11, 218, 20);
 
         jComboBoxsexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jComboBoxsexo);
+        jComboBoxsexo.setBounds(117, 37, 81, 20);
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnomepai);
+        jTextFieldnomepai.setBounds(117, 112, 218, 20);
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jTextFieldnomemae);
+        jTextFieldnomemae.setBounds(117, 143, 218, 20);
 
         try {
             jFormattedTextFieldIdade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jFormattedTextFieldIdade);
+        jFormattedTextFieldIdade.setBounds(117, 63, 218, 20);
 
         try {
             jFormattedTextFieldCPF.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-
-        javax.swing.GroupLayout jInternalFrameInformaçõesPessoaisLayout = new javax.swing.GroupLayout(jInternalFrameInformaçõesPessoais.getContentPane());
-        jInternalFrameInformaçõesPessoais.getContentPane().setLayout(jInternalFrameInformaçõesPessoaisLayout);
-        jInternalFrameInformaçõesPessoaisLayout.setHorizontalGroup(
-            jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelnome, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43)
-                        .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelsexo)
-                        .addGap(75, 75, 75)
-                        .addComponent(jComboBoxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelidade, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCPF))
-                        .addGap(28, 28, 28)
-                        .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jFormattedTextFieldIdade)
-                            .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)))
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelnomepai)
-                        .addGap(40, 40, 40)
-                        .addComponent(jTextFieldnomepai, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelnomemae)
-                        .addGap(34, 34, 34)
-                        .addComponent(jTextFieldnomemae, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jButtonproximo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jInternalFrameInformaçõesPessoaisLayout.setVerticalGroup(
-            jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabelnome))
-                    .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabelsexo))
-                    .addComponent(jComboBoxsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelidade)
-                    .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCPF)
-                    .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelnomepai)
-                    .addComponent(jTextFieldnomepai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addGroup(jInternalFrameInformaçõesPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameInformaçõesPessoaisLayout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabelnomemae))
-                    .addComponent(jTextFieldnomemae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addComponent(jButtonproximo))
-        );
+        jInternalFrameInformaçõesPessoais.getContentPane().add(jFormattedTextFieldCPF);
+        jFormattedTextFieldCPF.setBounds(117, 89, 218, 20);
 
         getContentPane().add(jInternalFrameInformaçõesPessoais);
         jInternalFrameInformaçõesPessoais.setBounds(20, 20, 340, 240);
@@ -498,6 +446,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+  
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
 
     }//GEN-LAST:event_jMenu1ActionPerformed
@@ -520,10 +469,13 @@ public class CadastroPaciente extends javax.swing.JFrame {
         f.setRegSUS(jFormattedTextFieldSUS.getText());
         f.setAltura(jFormattedTextFieldAltura.getText());
         f.setPeso(jFormattedTextFieldPeso.getText());
+  
+          String arquivo = "Nome: " + p.getNome() + "\r\nSexo: " + p.getSexo() + "\r\nIdade: " + p.getIdade() + "\r\nCPF: " + p.getCpf() + "\r\nNome do Pai: " + p.getNomePai() + "\r\nNome da Mãe: " + p.getNomeMae()
+                + "\r\nEstado: " + l.getEstado() + "\r\nCidade: " + l.getCidade() + "\r\nBairro: " + l.getBairro() + "\r\nEmail: " + l.getEmail() + "\r\nTelefone: " + l.getTelefone() + "\r\nTipo Sanguineo: "
+                + f.getTipoSangue() + "\r\nNome da Doença: " + f.getNomeDoença() + "\r\nRegistro SUS: " + f.getRegSUS() + "\r\nAltura: "
+                + f.getAltura() + "\r\nPeso: " + f.getPeso(); 
         
-        //String nome = Integer.toString(met.getCpf());
-        s.setSalvar();
-        salvar.gravarArquivo(s.getSalvar(), p.getNome());
+        salvar.gravarArquivo(arquivo, p.getNome());
         jInternalFrameFichaTecnica.setVisible(false);
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
@@ -533,8 +485,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAnteriorActionPerformed
 
     private void jButtonproximo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonproximo2ActionPerformed
-                 
-       
+      
             l.setEstado(jComboBoxEstados.getSelectedItem().toString());
             l.setCidade(jTextFieldcidade.getText());
             l.setBairro(jTextFieldbairro.getText());
@@ -549,11 +500,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
            
             p.setNome(jTextFieldnome.getText());
             p.setSexo(jComboBoxsexo.getSelectedItem().toString());
-            p.setIdade(Integer.parseInt(jFormattedTextFieldIdade.getText()));
+            p.setIdade(jFormattedTextFieldIdade.getText());
             p.setCpf(jFormattedTextFieldCPF.getText());
             p.setNomePai(jTextFieldnomepai.getText());
             p.setNomeMae(jTextFieldnomemae.getText());
-            p.setIdade(0);
+
             
         jInternalFrameInformaçõesPessoais.setVisible(false);
         jInternalFrameLocalizacao.setVisible(true);

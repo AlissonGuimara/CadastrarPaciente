@@ -4,23 +4,18 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import metodos.Ficha;
+import metodos.Localizacao;
+import metodos.Pessoa;
 
 
 public class Salvar {
-
-    //public String nomeArquivo;
-    //public String textoArquivo;
-     
-    //Metodos mt = new Metodos();
-
+    
     public void gravarArquivo(String arquivo, String nomeArquivo) {
-        //String nomeArquivo = Integer.toString(mt.getCpf());
-       // String nomeArquivo = "ooii";
-              JOptionPane.showMessageDialog(null, arquivo);
-        //JOptionPane.showMessageDialog(null, arquivo);
+           
+        JOptionPane.showMessageDialog(null, arquivo);
+      
      
-
-        
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {

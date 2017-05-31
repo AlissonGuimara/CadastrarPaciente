@@ -5,7 +5,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String sexo, int Idade, String cpf, String nomePai, String nomeMae) {
+    public Pessoa(String nome, String sexo, String Idade, String cpf, String nomePai, String nomeMae) {
 
         this.nome = nome;
         this.sexo = sexo;
@@ -32,11 +32,11 @@ public class Pessoa {
         this.sexo = sexo;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return Idade;
     }
 
-    public void setIdade(Integer Idade) {
+    public void setIdade(String Idade) {
         this.Idade = Idade;
     }
 
@@ -68,6 +68,6 @@ public class Pessoa {
     public String nomePai;
     public String nomeMae;
     public String sexo;
-    public Integer Idade;
+    public String Idade;
     public String cpf;
 }
