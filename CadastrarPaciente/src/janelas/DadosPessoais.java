@@ -1,9 +1,12 @@
 
 package janelas;
 import metodos.Pessoa;
+
 public class DadosPessoais extends javax.swing.JInternalFrame {
 
    Pessoa p = new Pessoa();
+ 
+
     
     public DadosPessoais() {
         initComponents();    
@@ -105,9 +108,8 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                                 .addComponent(nome)
                                 .addComponent(NomeMae))
                             .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(CPF, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Idade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)))
+                            .addComponent(Idade, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(21, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
@@ -178,6 +180,8 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
             p.setCpf(CPF.getText());
             p.setNomePai(nomePai.getText());
             p.setNomeMae(NomeMae.getText());
+            
+            dispose();
     }//GEN-LAST:event_GravarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed

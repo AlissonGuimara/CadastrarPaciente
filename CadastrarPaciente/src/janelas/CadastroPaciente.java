@@ -1,7 +1,6 @@
 package janelas;
 import LerSalvar.Salvar;
 import LerSalvar.Ler;
-import java.awt.Component;
 
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -20,8 +19,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     Ler ler = new Ler();
     Pessoa p = new Pessoa();
     Ficha f = new Ficha();
+
     JFileChooser fc = new JFileChooser();
-   
 
     public CadastroPaciente() {
         initComponents();
@@ -29,6 +28,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
        
     }
 
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -157,10 +157,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void jMenuItemCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarActionPerformed
        //jInternalFrameInformaçõesPessoais.setVisible(true);
-        CadastrarLocalizacao cad = new CadastrarLocalizacao();
-        jDesktopPane1.add(cad);
-        cad.setVisible(true);
-        
+        DadosPessoais dad = new DadosPessoais();
+       
+        jDesktopPane1.add(dad);
+        dad.setVisible(true);
+         
     }//GEN-LAST:event_jMenuItemCadastrarActionPerformed
 
     private void jMenuItemBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBuscarPacienteActionPerformed
