@@ -4,9 +4,6 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-import metodos.Ficha;
-import metodos.Localizacao;
-import metodos.Pessoa;
 
 
 public class Salvar {
