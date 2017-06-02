@@ -11,6 +11,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import metodos.Ficha;
 import metodos.Localizacao;
 import metodos.Pessoa;
+import metodos.VarSalvar;
+//import metodos.VarSalvar;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
@@ -19,9 +21,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
     Ler ler = new Ler();
     Pessoa p = new Pessoa();
     Ficha f = new Ficha();
-
     JFileChooser fc = new JFileChooser();
+    VarSalvar v = new VarSalvar();
+    
 
+    
     public CadastroPaciente() {
         initComponents();
         //this.setExtendedState(MAXIMIZED_BOTH);
@@ -34,11 +38,15 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private void initComponents() {
 
         jInternalFrameContato = new javax.swing.JInternalFrame();
+        jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItemCadastrar = new javax.swing.JMenuItem();
+        Cadastrar = new javax.swing.JMenuItem();
+        Localização = new javax.swing.JMenuItem();
+        FichaTecnica = new javax.swing.JMenuItem();
+        ItemSalvar = new javax.swing.JMenuItem();
         jMenuItemBuscarPaciente = new javax.swing.JMenuItem();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuAjuda = new javax.swing.JMenu();
@@ -77,7 +85,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,13 +99,37 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
 
-        jMenuItemCadastrar.setText("Cadastrar paciente");
-        jMenuItemCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        Cadastrar.setText("Cadastrar Paciente");
+        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemCadastrarActionPerformed(evt);
+                CadastrarActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemCadastrar);
+        jMenu1.add(Cadastrar);
+
+        Localização.setText("Cadastrar Localização");
+        Localização.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LocalizaçãoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Localização);
+
+        FichaTecnica.setText("Cadastrar Ficha Técnica");
+        FichaTecnica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FichaTecnicaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(FichaTecnica);
+
+        ItemSalvar.setText("Salvar");
+        ItemSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ItemSalvarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ItemSalvar);
 
         jMenuItemBuscarPaciente.setText("Buscar paciente");
         jMenuItemBuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -155,14 +187,14 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenu1ActionPerformed
 
-    private void jMenuItemCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarActionPerformed
+    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
        //jInternalFrameInformaçõesPessoais.setVisible(true);
         DadosPessoais dad = new DadosPessoais();
        
         jDesktopPane1.add(dad);
         dad.setVisible(true);
-         
-    }//GEN-LAST:event_jMenuItemCadastrarActionPerformed
+                 
+    }//GEN-LAST:event_CadastrarActionPerformed
 
     private void jMenuItemBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBuscarPacienteActionPerformed
 
@@ -188,6 +220,25 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
      JOptionPane.showMessageDialog(null,"Projeto desenvolvido por: Alisson Guimara, Carlos Kombo, Novato Martins");
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
+
+    private void LocalizaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocalizaçãoActionPerformed
+        CadastrarLocalizacao loc = new CadastrarLocalizacao();
+        jDesktopPane1.add(loc);
+        loc.setVisible(true);
+              
+    }//GEN-LAST:event_LocalizaçãoActionPerformed
+
+    private void FichaTecnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichaTecnicaActionPerformed
+        CadastroFichaTecnica fic = new CadastroFichaTecnica();
+        jDesktopPane1.add(fic);
+        fic.setVisible(true);
+              
+    }//GEN-LAST:event_FichaTecnicaActionPerformed
+
+    private void ItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemSalvarActionPerformed
+        
+        salvar.gravarArquivo(v.getSalvar(), "oiiii");
+    }//GEN-LAST:event_ItemSalvarActionPerformed
 
     public static void main(String args[]) {
         try {
@@ -218,13 +269,17 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Cadastrar;
+    private javax.swing.JMenuItem FichaTecnica;
+    private javax.swing.JMenuItem ItemSalvar;
+    private javax.swing.JMenuItem Localização;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JInternalFrame jInternalFrameContato;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemBuscarPaciente;
-    private javax.swing.JMenuItem jMenuItemCadastrar;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemSobre;
     private javax.swing.JPanel jPanel1;
