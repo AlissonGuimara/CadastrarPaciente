@@ -1,14 +1,13 @@
 
 package janelas;
+import LerSalvar.Salvar;
 import metodos.Pessoa;
-import metodos.VarSalvar;
 
 public class DadosPessoais extends javax.swing.JInternalFrame {
 
    Pessoa p = new Pessoa();
-   VarSalvar v = new VarSalvar();
-
- 
+   //VarSalvar v = new VarSalvar();
+    Salvar salv = new Salvar();
 
     
     public DadosPessoais() {
@@ -183,8 +182,7 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
             p.setCpf(CPF.getText());
             p.setNomePai(nomePai.getText());
             p.setNomeMae(NomeMae.getText());
-            v.setSalvarPessoa(p.getNome(), p.getSexo(), p.getIdade(), p.getCpf(), p.getNomePai(), p.getNomeMae());
-       
+            salv.setSalvarPessoa(p.getNome(), p.getSexo(), p.getIdade(), p.getCpf(), p.getNomePai(), p.getNomeMae());
             dispose();
     }//GEN-LAST:event_GravarActionPerformed
 

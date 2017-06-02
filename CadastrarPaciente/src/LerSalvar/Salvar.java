@@ -8,17 +8,41 @@ import javax.swing.JOptionPane;
 
 public class Salvar {
     
-    public void gravarArquivo(String arquivo, String nomeArquivo) {
-           
-        JOptionPane.showMessageDialog(null, arquivo);
+    
+      public void setSalvarPessoa(String nome, String sexo, String idade, String cpf, String pai, String mae) {
+        this.salvar = salvar + "Nome: " +nome+ "\r\nSexo: " + sexo + "\r\nIdade: " + idade + "\r\nCPF: " 
+                + cpf + "\r\nNome do Pai: " + pai + "\r\nNome da Mãe: " + mae;
+                
+
+    }
+      public void setSalvarLocalizacao(String estado, String cidade, String bairro, String email, String telefone){
       
+        this.salvar = salvar + "Estado: " + estado + "\r\nCidade: " + cidade + "\r\nBairro: " + bairro 
+                +"\r\nEmail: " + email + "\r\nTelefone: " + telefone;
+          
+      }
+      
+      public void setSalvarFicha(String sangue, String doenca, String sus, String altura, String peso){
+      
+        this.salvar = salvar +  "Tipo Sanguineo: "+ sangue + "\r\nNome da Doença: " + doenca + 
+                "\r\nRegistro SUS: " + sus +"\r\nAltur: "+ altura + "\r\nPeso: " + peso;
+          
+      }
+
+    public String salvar;
+    
+    
+    public void gravarArquivo(String nomeArquivo) {
+           
+        JOptionPane.showMessageDialog(null, salvar);
+     
      
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(nomeArquivo, false);
             bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(arquivo);
+            bufferedWriter.write(salvar);
             bufferedWriter.flush();
 //Se chegou ate essa linha, conseguiu salvar o arquivo com sucesso.
             JOptionPane.showMessageDialog(null, "Salvo com sucesso");

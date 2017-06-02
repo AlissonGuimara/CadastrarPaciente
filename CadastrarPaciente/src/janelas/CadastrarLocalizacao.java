@@ -1,13 +1,15 @@
 package janelas;
+import LerSalvar.Salvar;
 import java.awt.event.ActionListener;
 import metodos.Localizacao;
-import metodos.VarSalvar;
 
 public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
 
     private ActionListener listener;
     Localizacao l = new Localizacao();
-    VarSalvar v = new VarSalvar();
+    //VarSalvar v = new VarSalvar();
+        Salvar salv = new Salvar();
+
 
     
     public CadastrarLocalizacao() {
@@ -161,7 +163,7 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         l.setBairro(bairro.getText());
         l.setEmail(email.getText());
         l.setTelefone(telefone.getText());
-        v.setSalvarLocalizacao(l.getEstado(), l.getCidade(), l.getBairro(), l.getEmail(), l.getTelefone());
+        salv.setSalvarLocalizacao(l.getEstado(), l.getCidade(), l.getBairro(), l.getEmail(), l.getTelefone());
         
         dispose();
     }//GEN-LAST:event_CadastrarActionPerformed

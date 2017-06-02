@@ -1,11 +1,13 @@
 
 package janelas;
+import LerSalvar.Salvar;
 import metodos.Ficha;
-import metodos.VarSalvar;
 public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
 
     Ficha f = new Ficha();
-    VarSalvar v = new VarSalvar();
+    //VarSalvar v = new VarSalvar();
+        Salvar salv = new Salvar();
+
    
     public CadastroFichaTecnica() {
         initComponents();
@@ -171,7 +173,7 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         f.setRegSUS(regSUS.getText());
         f.setAltura(Altura.getText());
         f.setPeso(Peso.getText());
-        v.setSalvarFicha(f.getTipoSangue(), f.getNomeDoença(), f.getRegSUS(), f.getAltura(), f.getPeso());
+        salv.setSalvarFicha(f.getTipoSangue(), f.getNomeDoença(), f.getRegSUS(), f.getAltura(), f.getPeso());
     
         dispose();
     }//GEN-LAST:event_GravarActionPerformed

@@ -237,7 +237,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     private void ItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemSalvarActionPerformed
         
-        salvar.gravarArquivo(v.getSalvar(), "oiiii");
+        salvar.gravarArquivo("oiiii");
     }//GEN-LAST:event_ItemSalvarActionPerformed
 
     public static void main(String args[]) {
