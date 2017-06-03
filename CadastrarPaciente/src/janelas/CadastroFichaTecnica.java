@@ -35,7 +35,7 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Ficha do Paciente");
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preencha todos os campos abaixo:", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
 
         jLabel1Nome9.setText("Tipo Sanguíneo:");
 
@@ -141,7 +141,7 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(Peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Gravar)
                     .addComponent(Cancelar)
@@ -175,7 +175,7 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         f.setPeso(Peso.getText());
         salv.setSalvarFicha(f.getTipoSangue(), f.getNomeDoença(), f.getRegSUS(), f.getAltura(), f.getPeso());
     
-        dispose();
+      
     }//GEN-LAST:event_GravarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed

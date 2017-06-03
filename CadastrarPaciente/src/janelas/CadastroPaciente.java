@@ -1,4 +1,5 @@
 package janelas;
+
 import LerSalvar.Salvar;
 import LerSalvar.Ler;
 
@@ -23,16 +24,18 @@ public class CadastroPaciente extends javax.swing.JFrame {
     Ficha f = new Ficha();
     JFileChooser fc = new JFileChooser();
     VarSalvar v = new VarSalvar();
-    
+    // DadosPessoais dad = new DadosPessoais();
 
-    
+    protected DadosPessoais dad = null;
+    protected CadastrarLocalizacao loc = null;
+    protected CadastroFichaTecnica fic = null;
+
     public CadastroPaciente() {
         initComponents();
         //this.setExtendedState(MAXIMIZED_BOTH);
-       
+
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -74,11 +77,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGap(0, 441, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGap(0, 381, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -182,18 +185,22 @@ public class CadastroPaciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-  
+
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
 
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-       //jInternalFrameInformaçõesPessoais.setVisible(true);
-        DadosPessoais dad = new DadosPessoais();
-       
-        jDesktopPane1.add(dad);
-        dad.setVisible(true);
-                 
+        
+        if (evt.getSource() == Cadastrar) {
+            if (dad == null || dad.isClosed()) {
+                dad = new DadosPessoais();
+                jDesktopPane1.add(dad);
+                dad.setVisible(true);
+            }
+            jDesktopPane1.moveToFront(dad);
+        }
+
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void jMenuItemBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBuscarPacienteActionPerformed
@@ -204,7 +211,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         File selFile = fc.getSelectedFile();
 
-        System.out.println (selFile.getAbsolutePath());
+        System.out.println(selFile.getAbsolutePath());
         String sb = ler.lerArquivo(selFile);
         JOptionPane.showMessageDialog(null, sb);
     }//GEN-LAST:event_jMenuItemBuscarPacienteActionPerformed
@@ -218,25 +225,36 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuAjudaActionPerformed
 
     private void jMenuItemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSobreActionPerformed
-     JOptionPane.showMessageDialog(null,"Projeto desenvolvido por: Alisson Guimara, Carlos Kombo, Novato Martins");
+        JOptionPane.showMessageDialog(null, "Projeto desenvolvido por: Alisson Guimara, Carlos Kombo, Novato Martins");
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     private void LocalizaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocalizaçãoActionPerformed
-        CadastrarLocalizacao loc = new CadastrarLocalizacao();
-        jDesktopPane1.add(loc);
-        loc.setVisible(true);
-              
+    
+         if (evt.getSource() == Localização) {
+            if (loc == null || loc.isClosed()) {
+                loc = new CadastrarLocalizacao();
+                jDesktopPane1.add(loc);
+                loc.setVisible(true);
+            }
+            jDesktopPane1.moveToFront(loc);
+        }
+
     }//GEN-LAST:event_LocalizaçãoActionPerformed
 
     private void FichaTecnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichaTecnicaActionPerformed
-        CadastroFichaTecnica fic = new CadastroFichaTecnica();
-        jDesktopPane1.add(fic);
-        fic.setVisible(true);
-              
+      
+          if (evt.getSource() == FichaTecnica) {
+            if (fic == null || fic.isClosed()) {
+                fic = new CadastroFichaTecnica();
+                jDesktopPane1.add(fic);
+                fic.setVisible(true);
+            }
+            jDesktopPane1.moveToFront(fic);
+        }
+
     }//GEN-LAST:event_FichaTecnicaActionPerformed
 
     private void ItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemSalvarActionPerformed
-        
         salvar.gravarArquivo("oiiii");
     }//GEN-LAST:event_ItemSalvarActionPerformed
 

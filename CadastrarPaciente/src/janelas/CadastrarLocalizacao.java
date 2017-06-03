@@ -38,7 +38,7 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Cadastrar Localização");
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Preencha todos os campos abaixo:", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
 
         jLabel1Nome9.setText("Cidade:");
 
@@ -107,7 +107,7 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                         .addComponent(Cancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Limpar)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +137,7 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                     .addComponent(Cadastrar)
                     .addComponent(Cancelar)
                     .addComponent(Limpar))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,7 +165,7 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         l.setTelefone(telefone.getText());
         salv.setSalvarLocalizacao(l.getEstado(), l.getCidade(), l.getBairro(), l.getEmail(), l.getTelefone());
         
-        dispose();
+       
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed

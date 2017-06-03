@@ -59,4 +59,12 @@ public class Localizacao {
     public String estado;
     public String bairro;
     public String telefone;
+
+    public boolean isClosed() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

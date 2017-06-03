@@ -63,11 +63,19 @@ public class Pessoa {
     public void setNomeMae(String nomeMae) {
         this.nomeMae = nomeMae;
     }
-    
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
     public String nome;
     public String nomePai;
     public String nomeMae;
     public String sexo;
     public String Idade;
     public String cpf;
+    public Integer codigo;
 }
