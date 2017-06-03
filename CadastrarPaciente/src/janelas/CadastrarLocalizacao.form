@@ -202,6 +202,10 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastrarActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="/*"/>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="*/&#xa;Cadastrar.addActionListener(listener);&#xa;Cadastrar.setActionCommand(&quot;gravar&quot;);"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="telefone">
           <Properties>

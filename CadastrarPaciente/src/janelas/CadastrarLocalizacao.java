@@ -1,16 +1,26 @@
 package janelas;
 import LerSalvar.Salvar;
-import java.awt.event.ActionListener;
+import eventos.LocalizacaoActionListener;
 import metodos.Localizacao;
 
 public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
-
-    private ActionListener listener;
+    
+    private LocalizacaoActionListener listener = new LocalizacaoActionListener(this);
+    
     Localizacao l = new Localizacao();
     //VarSalvar v = new VarSalvar();
         Salvar salv = new Salvar();
 
-
+        
+    public Localizacao getLocalizacao(){
+        Localizacao l = new Localizacao();
+        l.setEstado(estados.getSelectedItem().toString());
+        l.setCidade(cidade.getText());
+        l.setBairro(bairro.getText());
+        l.setEmail(email.getText());
+        l.setTelefone(telefone.getText());
+        return l;
+    }
     
     public CadastrarLocalizacao() {
         initComponents();
@@ -53,11 +63,15 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         estados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC  \t", "AL \t ", "AP \t ", "AM \t ", "BA \t ", "CE \t ", "DF", "ES \t ", "GO \t ", "MA \t ", "MT \t ", "MS \t ", "MG \t ", "PA \t  \t", "PB \t  ", "PR \t ", "PE \t ", "PI \t ", "RJ \t ", "RN \t ", "RS \t ", "RO \t ", "RR \t ", "SC \t ", "SP \t ", "SE \t ", "TO" }));
 
         Cadastrar.setText("Gravar");
+        /*
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CadastrarActionPerformed(evt);
             }
         });
+        */
+        Cadastrar.addActionListener(listener);
+        Cadastrar.setActionCommand("gravar");
 
         try {
             telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#########")));
