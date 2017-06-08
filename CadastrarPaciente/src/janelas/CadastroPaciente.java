@@ -1,23 +1,13 @@
 package janelas;
 
-import LerSalvar.Salvar;
-import LerSalvar.Ler;
-
-import java.io.File;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
-import metodos.Ficha;
-import metodos.Localizacao;
-import metodos.Pessoa;
-import metodos.VarSalvar;
-//import metodos.VarSalvar;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
-    Localizacao l = new Localizacao();
+    /*Localizacao l = new Localizacao();
     Salvar salvar = new Salvar();
     Ler ler = new Ler();
     Pessoa p = new Pessoa();
@@ -25,7 +15,8 @@ public class CadastroPaciente extends javax.swing.JFrame {
     JFileChooser fc = new JFileChooser();
     VarSalvar v = new VarSalvar();
     // DadosPessoais dad = new DadosPessoais();
-
+    */
+    
     protected DadosPessoais dad = null;
     protected CadastrarLocalizacao loc = null;
     protected CadastroFichaTecnica fic = null;
@@ -49,8 +40,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         Cadastrar = new javax.swing.JMenuItem();
         Localização = new javax.swing.JMenuItem();
         FichaTecnica = new javax.swing.JMenuItem();
-        ItemSalvar = new javax.swing.JMenuItem();
-        jMenuItemBuscarPaciente = new javax.swing.JMenuItem();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuAjuda = new javax.swing.JMenu();
         jMenuItemSobre = new javax.swing.JMenuItem();
@@ -77,11 +66,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 441, Short.MAX_VALUE)
+            .addGap(0, 470, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 381, Short.MAX_VALUE)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -125,22 +114,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
             }
         });
         jMenu1.add(FichaTecnica);
-
-        ItemSalvar.setText("Salvar");
-        ItemSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ItemSalvarActionPerformed(evt);
-            }
-        });
-        jMenu1.add(ItemSalvar);
-
-        jMenuItemBuscarPaciente.setText("Buscar paciente");
-        jMenuItemBuscarPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemBuscarPacienteActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItemBuscarPaciente);
 
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
@@ -203,19 +176,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_CadastrarActionPerformed
 
-    private void jMenuItemBuscarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBuscarPacienteActionPerformed
-
-        fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
-        fc.showOpenDialog(this);
-
-        File selFile = fc.getSelectedFile();
-
-        System.out.println(selFile.getAbsolutePath());
-        String sb = ler.lerArquivo(selFile);
-        JOptionPane.showMessageDialog(null, sb);
-    }//GEN-LAST:event_jMenuItemBuscarPacienteActionPerformed
-
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSairActionPerformed
@@ -254,10 +214,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_FichaTecnicaActionPerformed
 
-    private void ItemSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemSalvarActionPerformed
-        salvar.gravarArquivo("oiiii");
-    }//GEN-LAST:event_ItemSalvarActionPerformed
-
     public static void main(String args[]) {
         try {
             for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
@@ -289,7 +245,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Cadastrar;
     private javax.swing.JMenuItem FichaTecnica;
-    private javax.swing.JMenuItem ItemSalvar;
     private javax.swing.JMenuItem Localização;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JFileChooser jFileChooser1;
@@ -297,7 +252,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuAjuda;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItemBuscarPaciente;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenuItem jMenuItemSobre;
     private javax.swing.JPanel jPanel1;

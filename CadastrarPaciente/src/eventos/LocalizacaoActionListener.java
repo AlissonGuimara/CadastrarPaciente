@@ -21,6 +21,7 @@ public class LocalizacaoActionListener implements ActionListener {
             //o botão gravar foi clicado
             Localizacao loc = frame.getLocalizacao();
             System.out.println(loc.toString());
+            System.out.println("ASJKASJKD");
         }
         
     }

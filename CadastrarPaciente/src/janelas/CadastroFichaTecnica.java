@@ -1,14 +1,23 @@
-
 package janelas;
-import LerSalvar.Salvar;
 import metodos.Ficha;
+import eventos.FichaActionListener;
+
 public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
 
-    Ficha f = new Ficha();
-    //VarSalvar v = new VarSalvar();
-        Salvar salv = new Salvar();
+    private FichaActionListener listener = new FichaActionListener(this);
 
-   
+    Ficha f = new Ficha();
+
+    public Ficha getFicha() {
+        f.setTipoSangue(TipoSangue.getSelectedItem().toString());
+        f.setNomeDoença(NomeDoenca.getText());
+        f.setRegSUS(regSUS.getText());
+        f.setAltura(Altura.getText());
+        f.setPeso(Peso.getText());
+
+        return f;
+    }
+
     public CadastroFichaTecnica() {
         initComponents();
     }
@@ -24,13 +33,13 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         jLabel16 = new javax.swing.JLabel();
         NomeDoenca = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        Gravar = new javax.swing.JButton();
         TipoSangue = new javax.swing.JComboBox<>();
         Cancelar = new javax.swing.JButton();
         Limpar = new javax.swing.JButton();
         regSUS = new javax.swing.JFormattedTextField();
         Altura = new javax.swing.JFormattedTextField();
         Peso = new javax.swing.JFormattedTextField();
+        gravar = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Ficha do Paciente");
@@ -46,13 +55,6 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         jLabel16.setText("Peso:");
 
         jLabel1.setText("Registro SUS:");
-
-        Gravar.setText("Gravar");
-        Gravar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GravarActionPerformed(evt);
-            }
-        });
 
         TipoSangue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
 
@@ -84,6 +86,8 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
 
         Peso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
+        gravar.setText("Gravar");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -110,8 +114,8 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
                             .addComponent(Peso))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(Gravar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(gravar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Cancelar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -141,11 +145,11 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(Peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Gravar)
                     .addComponent(Cancelar)
-                    .addComponent(Limpar))
+                    .addComponent(Limpar)
+                    .addComponent(gravar))
                 .addGap(63, 63, 63))
         );
 
@@ -167,17 +171,6 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GravarActionPerformed
-        f.setTipoSangue(TipoSangue.getSelectedItem().toString());
-        f.setNomeDoença(NomeDoenca.getText());
-        f.setRegSUS(regSUS.getText());
-        f.setAltura(Altura.getText());
-        f.setPeso(Peso.getText());
-        salv.setSalvarFicha(f.getTipoSangue(), f.getNomeDoença(), f.getRegSUS(), f.getAltura(), f.getPeso());
-    
-      
-    }//GEN-LAST:event_GravarActionPerformed
-
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         dispose();
     }//GEN-LAST:event_CancelarActionPerformed
@@ -194,11 +187,11 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField Altura;
     private javax.swing.JButton Cancelar;
-    private javax.swing.JButton Gravar;
     private javax.swing.JButton Limpar;
     private javax.swing.JTextField NomeDoenca;
     private javax.swing.JFormattedTextField Peso;
     private javax.swing.JComboBox<String> TipoSangue;
+    private javax.swing.JButton gravar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel1Nome10;

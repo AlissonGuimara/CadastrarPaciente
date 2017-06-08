@@ -1,5 +1,4 @@
 package janelas;
-import LerSalvar.Salvar;
 import eventos.LocalizacaoActionListener;
 import metodos.Localizacao;
 
@@ -8,12 +7,10 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
     private LocalizacaoActionListener listener = new LocalizacaoActionListener(this);
     
     Localizacao l = new Localizacao();
-    //VarSalvar v = new VarSalvar();
-        Salvar salv = new Salvar();
 
         
     public Localizacao getLocalizacao(){
-        Localizacao l = new Localizacao();
+        //Localizacao l = new Localizacao();
         l.setEstado(estados.getSelectedItem().toString());
         l.setCidade(cidade.getText());
         l.setBairro(bairro.getText());
@@ -39,10 +36,10 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         estados = new javax.swing.JComboBox<>();
         cidade = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
-        Cadastrar = new javax.swing.JButton();
         telefone = new javax.swing.JFormattedTextField();
         Cancelar = new javax.swing.JButton();
         Limpar = new javax.swing.JButton();
+        gravar = new javax.swing.JButton();
 
         setClosable(true);
         setResizable(true);
@@ -61,17 +58,6 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         jLabel19.setText("Bairro:");
 
         estados.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC  \t", "AL \t ", "AP \t ", "AM \t ", "BA \t ", "CE \t ", "DF", "ES \t ", "GO \t ", "MA \t ", "MT \t ", "MS \t ", "MG \t ", "PA \t  \t", "PB \t  ", "PR \t ", "PE \t ", "PI \t ", "RJ \t ", "RN \t ", "RS \t ", "RO \t ", "RR \t ", "SC \t ", "SP \t ", "SE \t ", "TO" }));
-
-        Cadastrar.setText("Gravar");
-        /*
-        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarActionPerformed(evt);
-            }
-        });
-        */
-        Cadastrar.addActionListener(listener);
-        Cadastrar.setActionCommand("gravar");
 
         try {
             telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#########")));
@@ -92,6 +78,8 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                 LimparActionPerformed(evt);
             }
         });
+
+        gravar.setText("Gravar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -115,8 +103,8 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                             .addComponent(estados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(telefone)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(Cadastrar)
+                        .addGap(62, 62, 62)
+                        .addComponent(gravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -148,10 +136,10 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                     .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cadastrar)
                     .addComponent(Cancelar)
-                    .addComponent(Limpar))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(Limpar)
+                    .addComponent(gravar))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -171,17 +159,6 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-        l.setEstado(estados.getSelectedItem().toString());
-        l.setCidade(cidade.getText());
-        l.setBairro(bairro.getText());
-        l.setEmail(email.getText());
-        l.setTelefone(telefone.getText());
-        salv.setSalvarLocalizacao(l.getEstado(), l.getCidade(), l.getBairro(), l.getEmail(), l.getTelefone());
-        
-       
-    }//GEN-LAST:event_CadastrarActionPerformed
-
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
             dispose();
     }//GEN-LAST:event_CancelarActionPerformed
@@ -197,13 +174,13 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cadastrar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JButton Limpar;
     private javax.swing.JTextField bairro;
     private javax.swing.JTextField cidade;
     private javax.swing.JTextField email;
     private javax.swing.JComboBox<String> estados;
+    private javax.swing.JButton gravar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel1Nome10;
