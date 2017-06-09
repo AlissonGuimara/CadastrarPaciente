@@ -51,6 +51,7 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Ficha do Paciente");
+        setPreferredSize(new java.awt.Dimension(404, 373));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
 
@@ -151,6 +152,8 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
                 .addGap(63, 63, 63))
         );
 
+        gravar.addActionListener(listener);
+        gravar.setActionCommand("gravar");
         limpar.addActionListener(listener);
         limpar.setActionCommand("limpar");
         cancelar.addActionListener(listener);

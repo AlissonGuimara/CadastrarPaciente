@@ -1,0 +1,16 @@
+﻿Fri Jun 09 03:36:46 BRT 2017 -> Tela: class janelas.DadosPessoais = Operação Salva com Sucesso !
+Fri Jun 09 03:36:51 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = gravando dados de localização
+Fri Jun 09 03:36:58 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = Operação Salva com Sucesso !
+Fri Jun 09 03:37:00 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = limpando dados de localização
+Fri Jun 09 03:37:00 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = cancelar janela de localização
+Fri Jun 09 03:37:04 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = gravando dados de localização
+Fri Jun 09 03:37:11 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = Operação Salva com Sucesso !
+Fri Jun 09 03:37:16 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = Operação Salva com Sucesso !
+Fri Jun 09 03:37:21 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = gravando dados de localização
+Fri Jun 09 03:37:24 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = Operação Salva com Sucesso !
+Fri Jun 09 03:37:25 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = limpando dados de localização
+Fri Jun 09 03:37:25 BRT 2017 -> Tela: class janelas.CadastrarLocalizacao = cancelar janela de localização
+Fri Jun 09 03:38:40 BRT 2017 -> Tela: class janelas.CadastroFichaTecnica = gravando dados da ficha tecnica
+Fri Jun 09 03:38:54 BRT 2017 -> Tela: class janelas.CadastroFichaTecnica = Operação Salva com Sucesso !
+Fri Jun 09 03:38:55 BRT 2017 -> Tela: class janelas.CadastroFichaTecnica = limpando dados da ficha tecnica
+Fri Jun 09 03:38:55 BRT 2017 -> Tela: class janelas.CadastroFichaTecnica = cancelar janela da ficha tecnica

@@ -13,11 +13,11 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         Pessoa p = new Pessoa();
         p.setNome(nome.getText());
         p.setSexo(sexo.getSelectedItem().toString());
-        p.setIdade(Idade.getToolTipText());
+        p.setIdade(idade.getText());
         p.setCpf(CPF.getText());
         p.setNomePai(nomePai.getText());
         p.setNomeMae(NomeMae.getText());
-        p.setCodigo(Integer.parseInt(codigo.getText()));
+        p.setCodigo(codigo.getText());
         return p;
 
     }
@@ -26,7 +26,7 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         
         nome.setText(null);
         sexo.setSelectedItem(null);
-        Idade.setToolTipText(null);
+        idade.setText(null);
         CPF.setText(null);
         nomePai.setText(null);
         NomeMae.setText(null);
@@ -54,15 +54,16 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         NomeMae = new javax.swing.JTextField();
         CPF = new javax.swing.JFormattedTextField();
         sexo = new javax.swing.JComboBox<>();
-        Idade = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         codigo = new javax.swing.JFormattedTextField();
         gravar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
         cancelar = new javax.swing.JButton();
+        idade = new javax.swing.JFormattedTextField();
 
         setClosable(true);
         setTitle("Dados Pessoais");
+        setPreferredSize(new java.awt.Dimension(404, 373));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Lucida Grande", 1, 14))); // NOI18N
 
@@ -107,6 +108,8 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
 
         cancelar.setText("Cancelar");
 
+        idade.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -142,10 +145,10 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nomePai, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Idade, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idade, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -166,7 +169,7 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1Nome10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(idade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,7 +182,7 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(NomeMae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gravar)
                     .addComponent(limpar)
@@ -187,6 +190,8 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27))
         );
 
+        gravar.addActionListener(listener);
+        gravar.setActionCommand("gravar");
         limpar.addActionListener(listener);
         limpar.setActionCommand("limpar");
         cancelar.addActionListener(listener);
@@ -213,11 +218,11 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField CPF;
-    private javax.swing.JSpinner Idade;
     private javax.swing.JTextField NomeMae;
     private javax.swing.JButton cancelar;
     private javax.swing.JFormattedTextField codigo;
     private javax.swing.JButton gravar;
+    private javax.swing.JFormattedTextField idade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel1Nome10;

@@ -5,7 +5,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String sexo, String Idade, String cpf, String nomePai, String nomeMae) {
+    public Pessoa(String nome, String sexo, String Idade, String cpf, String nomePai, String nomeMae, String codigo) {
 
         this.nome = nome;
         this.sexo = sexo;
@@ -13,6 +13,7 @@ public class Pessoa {
         this.cpf = cpf;
         this.nomePai = nomePai;
         this.nomeMae = nomeMae;
+        this.codigo = codigo;
 
     }
 
@@ -63,11 +64,11 @@ public class Pessoa {
     public void setNomeMae(String nomeMae) {
         this.nomeMae = nomeMae;
     }
-    public Integer getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Integer codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -77,5 +78,5 @@ public class Pessoa {
     public String sexo;
     public String Idade;
     public String cpf;
-    public Integer codigo;
+    public String codigo;
 }
