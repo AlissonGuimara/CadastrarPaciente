@@ -23,6 +23,14 @@ public class DadospActionListener implements ActionListener{
             Pessoa pe = frame.getPessoa();
             System.out.println(pe.toString());
         }
+        if ("limpar".equals(e.getActionCommand())){
+             frame.Limpar();
+        }
+        
+        if("cancelar".equals(e.getActionCommand())){
+            frame.dispose();
+            
+        }
         
     }
     

@@ -6,17 +6,24 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
     
     private LocalizacaoActionListener listener = new LocalizacaoActionListener(this);
     
-    Localizacao l = new Localizacao();
-
         
     public Localizacao getLocalizacao(){
-        //Localizacao l = new Localizacao();
+        Localizacao l = new Localizacao();
         l.setEstado(estados.getSelectedItem().toString());
         l.setCidade(cidade.getText());
         l.setBairro(bairro.getText());
         l.setEmail(email.getText());
         l.setTelefone(telefone.getText());
         return l;
+    }
+    
+    public void Limpar(){
+            estados.setSelectedItem("");
+            cidade.setText("");
+            bairro.setText("");
+            email.setText("");
+            telefone.setText("");
+             
     }
     
     public CadastrarLocalizacao() {
@@ -37,9 +44,9 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
         cidade = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
         telefone = new javax.swing.JFormattedTextField();
-        Cancelar = new javax.swing.JButton();
-        Limpar = new javax.swing.JButton();
         gravar = new javax.swing.JButton();
+        Limpar = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
 
         setClosable(true);
         setResizable(true);
@@ -65,21 +72,11 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
 
-        Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarActionPerformed(evt);
-            }
-        });
+        gravar.setText("Gravar");
 
         Limpar.setText("Limpar");
-        Limpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimparActionPerformed(evt);
-            }
-        });
 
-        gravar.setText("Gravar");
+        cancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -106,8 +103,8 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                         .addGap(62, 62, 62)
                         .addComponent(gravar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Cancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cancelar)
+                        .addGap(8, 8, 8)
                         .addComponent(Limpar)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
@@ -136,11 +133,18 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
                     .addComponent(telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancelar)
+                    .addComponent(gravar)
                     .addComponent(Limpar)
-                    .addComponent(gravar))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(cancelar))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
+
+        gravar.addActionListener(listener);
+        gravar.setActionCommand("gravar");
+        Limpar.addActionListener(listener);
+        Limpar.setActionCommand("limpar");
+        cancelar.addActionListener(listener);
+        cancelar.setActionCommand("cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,25 +162,12 @@ public class CadastrarLocalizacao extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-            dispose();
-    }//GEN-LAST:event_CancelarActionPerformed
-
-    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
-            estados.setSelectedItem(null);
-            cidade.setText(null);
-            bairro.setText(null);
-            email.setText(null);
-            telefone.setText(null);
-            
-    }//GEN-LAST:event_LimparActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cancelar;
     private javax.swing.JButton Limpar;
     private javax.swing.JTextField bairro;
+    private javax.swing.JButton cancelar;
     private javax.swing.JTextField cidade;
     private javax.swing.JTextField email;
     private javax.swing.JComboBox<String> estados;

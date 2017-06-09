@@ -6,9 +6,8 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
 
     private FichaActionListener listener = new FichaActionListener(this);
 
-    Ficha f = new Ficha();
-
     public Ficha getFicha() {
+        Ficha f = new Ficha();
         f.setTipoSangue(TipoSangue.getSelectedItem().toString());
         f.setNomeDoença(NomeDoenca.getText());
         f.setRegSUS(regSUS.getText());
@@ -18,6 +17,15 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         return f;
     }
 
+    public void Limpar(){
+        TipoSangue.setSelectedItem(null);
+        NomeDoenca.setText(null);
+        regSUS.setText(null);
+        Altura.setText(null);
+        Peso.setText(null);
+        
+    }
+    
     public CadastroFichaTecnica() {
         initComponents();
     }
@@ -34,12 +42,12 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         NomeDoenca = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         TipoSangue = new javax.swing.JComboBox<>();
-        Cancelar = new javax.swing.JButton();
-        Limpar = new javax.swing.JButton();
         regSUS = new javax.swing.JFormattedTextField();
         Altura = new javax.swing.JFormattedTextField();
         Peso = new javax.swing.JFormattedTextField();
         gravar = new javax.swing.JButton();
+        limpar = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Ficha do Paciente");
@@ -58,20 +66,6 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
 
         TipoSangue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "A-", "B+", "AB+", "AB-", "O+", "O-" }));
 
-        Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarActionPerformed(evt);
-            }
-        });
-
-        Limpar.setText("Limpar");
-        Limpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimparActionPerformed(evt);
-            }
-        });
-
         try {
             regSUS.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###############")));
         } catch (java.text.ParseException ex) {
@@ -87,6 +81,10 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         Peso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
         gravar.setText("Gravar");
+
+        limpar.setText("Limpar");
+
+        cancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -117,10 +115,10 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
                 .addGap(48, 48, 48)
                 .addComponent(gravar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cancelar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Limpar)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addComponent(cancelar)
+                .addGap(8, 8, 8)
+                .addComponent(limpar)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,13 +143,18 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(Peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancelar)
-                    .addComponent(Limpar)
-                    .addComponent(gravar))
+                    .addComponent(gravar)
+                    .addComponent(limpar)
+                    .addComponent(cancelar))
                 .addGap(63, 63, 63))
         );
+
+        limpar.addActionListener(listener);
+        limpar.setActionCommand("limpar");
+        cancelar.addActionListener(listener);
+        cancelar.setActionCommand("cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -171,26 +174,13 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-        dispose();
-    }//GEN-LAST:event_CancelarActionPerformed
-
-    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
-        TipoSangue.setSelectedItem(null);
-        NomeDoenca.setText(null);
-        regSUS.setText(null);
-        Altura.setText(null);
-        Peso.setText(null);
-    }//GEN-LAST:event_LimparActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField Altura;
-    private javax.swing.JButton Cancelar;
-    private javax.swing.JButton Limpar;
     private javax.swing.JTextField NomeDoenca;
     private javax.swing.JFormattedTextField Peso;
     private javax.swing.JComboBox<String> TipoSangue;
+    private javax.swing.JButton cancelar;
     private javax.swing.JButton gravar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
@@ -198,6 +188,7 @@ public class CadastroFichaTecnica extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1Nome11;
     private javax.swing.JLabel jLabel1Nome9;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton limpar;
     private javax.swing.JFormattedTextField regSUS;
     // End of variables declaration//GEN-END:variables
 }

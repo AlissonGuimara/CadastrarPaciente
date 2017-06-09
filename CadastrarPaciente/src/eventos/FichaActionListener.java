@@ -22,7 +22,14 @@ public class FichaActionListener implements ActionListener {
             Ficha fic = frame.getFicha();
             System.out.println(fic.toString());
         }
-    
+        if ("limpar".equals(e.getActionCommand())){
+             frame.Limpar();
+        }
+        
+        if("cancelar".equals(e.getActionCommand())){
+            frame.dispose();
+            
+        }
     }
   
 }

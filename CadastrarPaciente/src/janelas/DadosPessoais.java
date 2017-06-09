@@ -7,10 +7,10 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
 
     private DadospActionListener listener = new DadospActionListener(this);
 
-    Pessoa p = new Pessoa();
+    
 
     public Pessoa getPessoa() {
-
+        Pessoa p = new Pessoa();
         p.setNome(nome.getText());
         p.setSexo(sexo.getSelectedItem().toString());
         p.setIdade(Idade.getToolTipText());
@@ -20,6 +20,18 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         p.setCodigo(Integer.parseInt(codigo.getText()));
         return p;
 
+    }
+    
+    public void Limpar(){
+        
+        nome.setText(null);
+        sexo.setSelectedItem(null);
+        Idade.setToolTipText(null);
+        CPF.setText(null);
+        nomePai.setText(null);
+        NomeMae.setText(null);
+        codigo.setText(null);
+    
     }
 
     public DadosPessoais() {
@@ -43,11 +55,11 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         CPF = new javax.swing.JFormattedTextField();
         sexo = new javax.swing.JComboBox<>();
         Idade = new javax.swing.JSpinner();
-        Cancelar = new javax.swing.JButton();
-        Limpar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         codigo = new javax.swing.JFormattedTextField();
         gravar = new javax.swing.JButton();
+        limpar = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Dados Pessoais");
@@ -81,20 +93,6 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         sexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         sexo.setToolTipText("");
 
-        Cancelar.setText("Cancelar");
-        Cancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelarActionPerformed(evt);
-            }
-        });
-
-        Limpar.setText("Limpar");
-        Limpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimparActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Código:");
 
         try {
@@ -105,6 +103,10 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
 
         gravar.setText("Gravar");
 
+        limpar.setText("Limpar");
+
+        cancelar.setText("Cancelar");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -113,10 +115,10 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(gravar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Cancelar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Limpar)
-                .addGap(53, 53, 53))
+                .addComponent(cancelar)
+                .addGap(8, 8, 8)
+                .addComponent(limpar)
+                .addGap(43, 43, 43))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -177,13 +179,18 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(NomeMae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cancelar)
-                    .addComponent(Limpar)
-                    .addComponent(gravar))
+                    .addComponent(gravar)
+                    .addComponent(limpar)
+                    .addComponent(cancelar))
                 .addGap(27, 27, 27))
         );
+
+        limpar.addActionListener(listener);
+        limpar.setActionCommand("limpar");
+        cancelar.addActionListener(listener);
+        cancelar.setActionCommand("cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,27 +210,12 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NomeMaeActionPerformed
 
-    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
-        dispose();
-    }//GEN-LAST:event_CancelarActionPerformed
-
-    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
-        nome.setText(null);
-        sexo.setSelectedItem(null);
-        Idade.setToolTipText(null);
-        CPF.setText(null);
-        nomePai.setText(null);
-        NomeMae.setText(null);
-        codigo.setText(null);
-    }//GEN-LAST:event_LimparActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField CPF;
-    private javax.swing.JButton Cancelar;
     private javax.swing.JSpinner Idade;
-    private javax.swing.JButton Limpar;
     private javax.swing.JTextField NomeMae;
+    private javax.swing.JButton cancelar;
     private javax.swing.JFormattedTextField codigo;
     private javax.swing.JButton gravar;
     private javax.swing.JLabel jLabel1;
@@ -234,6 +226,7 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton limpar;
     private javax.swing.JTextField nome;
     private javax.swing.JTextField nomePai;
     private javax.swing.JComboBox<String> sexo;
