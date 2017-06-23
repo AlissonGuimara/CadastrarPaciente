@@ -206,39 +206,26 @@ public class PacienteDao {
         return lista;
     }
 
-    public Pessoa getPaciente(String codigo, String cpf, String idade, String nome, String nomeMae, String nomePai, 
-            String sexo) {
+    public Pessoa getPaciente(Pessoa p) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
             String sql = "select codigo, descricao from produtos where codigo = ?";
             ps = conn.prepareStatement(sql);
-            ps.setString(1, codigo);
-            ps.setString(2, cpf);
-            ps.setString(3, idade);
-            ps.setString(4, nome);
-            ps.setString(5, nomeMae);
-            ps.setString(6, nomePai);
-            ps.setString(7, sexo);
+            ps.setString(1, p.getCodigo());
             ResultSet rs = ps.executeQuery();
+            
             if(rs.next()) {
-                String codigo = rs.getString(1);
-                String cpf = rs.getString(2);
-                String idade = rs.getString(3);
-                String nome = rs.getString(4);
-                String nomeMae = rs.getString(5);
-                String nomePai = rs.getString(6);
-                String sexo = rs.getString(7);
-                
                 Pessoa paciente = new Pessoa();
-                paciente.setCodigo(codigo);
-                paciente.setCpf(cpf);
-                paciente.setIdade(idade);
-                paciente.setNome(nome);
-                paciente.setNomeMae(nomeMae);
-                paciente.setNomePai(nomePai);
-                paciente.setSexo(sexo);
+               
+                paciente.setCodigo(rs.getString(1));
+                paciente.setCpf(rs.getString(2));
+                paciente.setIdade(rs.getString(3));
+                paciente.setNome(rs.getString(4));
+                paciente.setNomeMae(rs.getString(5));
+                paciente.setNomePai(rs.getString(6));
+                paciente.setSexo(rs.getString(7));
                 return paciente;
             }
         } catch(SQLException e) {

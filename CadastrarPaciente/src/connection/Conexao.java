@@ -2,9 +2,16 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 public class Conexao {
+
+     Connection conn = null;
+    public Statement stm;//preparar e realizar pesquisas no banco de dados
+    public ResultSet rs;//armasenar o rasultado de uma pesquisa pasada para o Statement
 
     public static Connection getConnection() {
         Connection conn = null;
@@ -19,5 +26,13 @@ public class Conexao {
         }
 
         return conn;
+    }
+     public void executaSQL(String sql) throws Exception {
+        try {
+            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
+            rs = stm.executeQuery(sql);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERRO DE EXECUÇÃO SQL! \n ERRO " + ex.getMessage());
+        }
     }
 }
