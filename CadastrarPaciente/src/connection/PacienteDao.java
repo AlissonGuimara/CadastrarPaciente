@@ -161,7 +161,7 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo, descricao from produtos";
+            String sql = "select codigo from Pessoa";
             ps = conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
@@ -211,7 +211,7 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo, descricao from produtos where codigo = ?";
+            String sql = "select codigo from Pessoa where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, p.getCodigo());
             ResultSet rs = ps.executeQuery();

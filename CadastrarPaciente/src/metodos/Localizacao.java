@@ -4,14 +4,16 @@ public class Localizacao {
 
     public Localizacao() {
     }
+    Pessoa p;
 
-    public Localizacao(String estado, String cidade, String bairro, String email, String telefone) {
+    public Localizacao(String estado, String cidade, String bairro, String email, String telefone, String codigo) {
 
         this.email = email;
         this.cidade = cidade;
         this.estado = estado;
         this.telefone = telefone;
         this.bairro = bairro;
+        this.codigo = p.getCodigo();
 
     }
 
@@ -54,11 +56,22 @@ public class Localizacao {
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+       
+        
     public String email;
     public String cidade;
     public String estado;
     public String bairro;
     public String telefone;
+    public String codigo;
 
     public boolean isClosed() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
