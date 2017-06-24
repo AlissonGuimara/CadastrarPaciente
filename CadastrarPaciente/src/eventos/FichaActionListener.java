@@ -1,5 +1,6 @@
 package eventos;
 
+import connection.FichaDao;
 import janelas.CadastroFichaTecnica;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,7 +31,9 @@ public class FichaActionListener implements ActionListener {
             mensagem = "gravando dados da ficha tecnica";
             Ficha fic = frame.getFicha();
             System.out.println(fic.toString());
+            
             try {
+                new FichaDao().insert(fic);
                 ErrosFic(fic.getRegSUS(), fic.getNomeDoença(), fic.getAltura(), fic.getPeso());
                 
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
