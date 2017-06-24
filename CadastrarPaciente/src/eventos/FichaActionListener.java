@@ -32,6 +32,7 @@ public class FichaActionListener implements ActionListener {
             System.out.println(fic.toString());
             try {
                 ErrosFic(fic.getRegSUS(), fic.getNomeDoença(), fic.getAltura(), fic.getPeso());
+                
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
             } catch (AplicacaoException ex) {
                 Logger.getLogger(LocalizacaoActionListener.class.getName()).log(Level.SEVERE, null, ex);
