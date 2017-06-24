@@ -6,8 +6,10 @@ public class Ficha {
     
     public Ficha (){
     }
+    
+    Pessoa p;
 
-    public Ficha(String regSUS, String nomeDoença, String tipoSangue, String altura, String peso) {
+    public Ficha(String regSUS, String nomeDoença, String tipoSangue, String altura, String peso, String codigo) {
 
         this.regSUS = regSUS;
         this.nomeDoença = nomeDoença;
@@ -15,6 +17,7 @@ public class Ficha {
 
         this.altura = altura;
         this.peso = peso;
+        this.codigo = p.getCodigo();
     }
 
     public String getRegSUS() {
@@ -57,11 +60,22 @@ public class Ficha {
         this.peso = peso;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    
+    
+
     public String regSUS;
     public String nomeDoença;
     public String tipoSangue;
     public String altura;
     public String peso;
+    public String codigo;
 
 }
 
