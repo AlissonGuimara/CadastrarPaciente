@@ -1,6 +1,6 @@
 package eventos;
 
-import janelas.DadosPessoais;
+import janelas.CadastrarPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import metodos.Pessoa;
@@ -12,11 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class DadospActionListener implements ActionListener {
+public class PacienteActionListener implements ActionListener {
 
-    private DadosPessoais frame;
+    private CadastrarPaciente frame;
 
-    public DadospActionListener(DadosPessoais frame) {
+    public PacienteActionListener(CadastrarPaciente frame) {
         this.frame = frame;
     }
 
@@ -33,7 +33,7 @@ public class DadospActionListener implements ActionListener {
                 ErrosDad(pe.getCodigo(), pe.getNome(), pe.getIdade(), pe.getCpf(), pe.getNomePai(), pe.getNomeMae());
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
             } catch (AplicacaoException ex) {
-                Logger.getLogger(DadospActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PacienteActionListener.class.getName()).log(Level.SEVERE, null, ex);
             } finally {
 
                 try {
@@ -54,8 +54,6 @@ public class DadospActionListener implements ActionListener {
 
         }
     
-    
-
     private void ErrosDad(String codigo, String nome, String idade, String cpf, String nomepai, String nomemae) throws AplicacaoException {
 
         if (codigo == null || codigo.isEmpty() || nome == null || nome.isEmpty() || idade == null || idade.isEmpty()

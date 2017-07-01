@@ -1,15 +1,22 @@
 package janelas;
 
-import javax.swing.JTextField;
 import log.UltimoUsuario;
+import java.io.IOException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import log.ArquivoManipular;
 
 public class login extends javax.swing.JFrame {
-      UltimoUsuario ult = new UltimoUsuario();
-      public login() {
+
+    UltimoUsuario ult = new UltimoUsuario();
+
+    public login() {
         initComponents();
         usuario.setText(ult.lerArquivo());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -17,7 +24,7 @@ public class login extends javax.swing.JFrame {
         label2 = new java.awt.Label();
         usuario = new javax.swing.JTextField();
         senha = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Ok = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -27,11 +34,11 @@ public class login extends javax.swing.JFrame {
         label2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         label2.setText("Senha");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Ok.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Ok.setText("OK");
+        Ok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                OkActionPerformed(evt);
             }
         });
 
@@ -64,7 +71,7 @@ public class login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(Ok)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2))
                     .addComponent(senha)
@@ -86,30 +93,48 @@ public class login extends javax.swing.JFrame {
                         .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(Ok)
                     .addComponent(jButton2))
                 .addGap(0, 71, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
-    new CadastroPaciente().setVisible(true);
-    dispose();
-    ult.UltimoUsuario(usuario.getText());
-    
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void OkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkActionPerformed
+
+        String mensagem = "";
+        if ("1234".equals(senha.getText())) {
+            new CadastroPaciente().setVisible(true);
+            dispose();
+            ult.UltimoUsuario(usuario.getText());
+            mensagem = "Entrando no sistema";
+            try {
+                ArquivoManipular.EscreverArquivo("log.txt", new Date() + " -> Tela: Login" + " = " + mensagem + "\r\n", true);
+            } catch (IOException ex) {
+                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (!"1234".equals(senha.getText())) {
+            mensagem = "Senha Incorreta!!";
+            JOptionPane.showMessageDialog(null, "Senha Incorreta");
+            try {
+                ArquivoManipular.EscreverArquivo("log.txt", new Date() + " -> Tela: Login" + " = " + mensagem + "\r\n", true);
+            }  catch (IOException ex) {
+                Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+
+        }
+
+    }//GEN-LAST:event_OkActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Ok;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

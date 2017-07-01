@@ -1,11 +1,11 @@
 package janelas;
 
 import metodos.Pessoa;
-import eventos.DadospActionListener;
+import eventos.PacienteActionListener;
 
-public class DadosPessoais extends javax.swing.JInternalFrame {
+public class CadastrarPaciente extends javax.swing.JInternalFrame {
 
-    private DadospActionListener listener = new DadospActionListener(this);
+    private PacienteActionListener listener = new PacienteActionListener(this);
 
     
 
@@ -34,7 +34,7 @@ public class DadosPessoais extends javax.swing.JInternalFrame {
     
     }
 
-    public DadosPessoais() {
+    public CadastrarPaciente() {
         initComponents();
     }
 

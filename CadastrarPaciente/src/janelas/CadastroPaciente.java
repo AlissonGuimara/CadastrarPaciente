@@ -1,5 +1,7 @@
 package janelas;
 
+import eventos.ListenerPrincipal;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
@@ -7,17 +9,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
-    /*Localizacao l = new Localizacao();
-    Salvar salvar = new Salvar();
-    Ler ler = new Ler();
-    Pessoa p = new Pessoa();
-    Ficha f = new Ficha();
-    JFileChooser fc = new JFileChooser();
-    VarSalvar v = new VarSalvar();
-    // DadosPessoais dad = new DadosPessoais();
-    */
+    private ListenerPrincipal listener = new ListenerPrincipal(this);
     
-    protected DadosPessoais dad = null;
+    protected CadastrarPaciente dad = null;
     protected CadastrarLocalizacao loc = null;
     protected CadastroFichaTecnica fic = null;
 
@@ -25,6 +19,12 @@ public class CadastroPaciente extends javax.swing.JFrame {
         initComponents();
         //this.setExtendedState(MAXIMIZED_BOTH);
 
+    }
+    
+    public  JDesktopPane jDesktopPane1(){
+    
+        return jDesktopPane1;
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -60,32 +60,25 @@ public class CadastroPaciente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(450, 450));
 
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setMaximumSize(new java.awt.Dimension(200, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        jDesktopPane1.setPreferredSize(new java.awt.Dimension(450, 450));
+        jDesktopPane1.setMinimumSize(new java.awt.Dimension(450, 450));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGap(0, 2676, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-        );
+        jPanel1.add(jDesktopPane1);
 
         jMenu1.setText("Cadastro");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,28 +88,40 @@ public class CadastroPaciente extends javax.swing.JFrame {
         });
 
         Cadastrar.setText("Cadastrar Paciente");
+        /*
         Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CadastrarActionPerformed(evt);
             }
         });
+        */
         jMenu1.add(Cadastrar);
+        Cadastrar.addActionListener(listener);
+        Cadastrar.setActionCommand("Cadastrar");
 
         Localização.setText("Cadastrar Localização");
+        /*
         Localização.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LocalizaçãoActionPerformed(evt);
             }
         });
+        */
         jMenu1.add(Localização);
+        Localização.addActionListener(listener);
+        Localização.setActionCommand("Localização");
 
         FichaTecnica.setText("Cadastrar Ficha Técnica");
+        /*
         FichaTecnica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FichaTecnicaActionPerformed(evt);
             }
         });
+        */
         jMenu1.add(FichaTecnica);
+        FichaTecnica.addActionListener(listener);
+        FichaTecnica.setActionCommand("FichaTecnica");
 
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
@@ -151,14 +156,19 @@ public class CadastroPaciente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -167,16 +177,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-        
-        if (evt.getSource() == Cadastrar) {
-            if (dad == null || dad.isClosed()) {
-                dad = new DadosPessoais();
-                jDesktopPane1.add(dad);
-                dad.setVisible(true);
-            }
-            jDesktopPane1.moveToFront(dad);
-        }
-
+      
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void jMenuItemSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairActionPerformed
@@ -192,29 +193,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemSobreActionPerformed
 
     private void LocalizaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LocalizaçãoActionPerformed
-    
-         if (evt.getSource() == Localização) {
-            if (loc == null || loc.isClosed()) {
-                loc = new CadastrarLocalizacao();
-                jDesktopPane1.add(loc);
-                loc.setVisible(true);
-            }
-            jDesktopPane1.moveToFront(loc);
-        }
-
+  
     }//GEN-LAST:event_LocalizaçãoActionPerformed
 
     private void FichaTecnicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichaTecnicaActionPerformed
-      
-          if (evt.getSource() == FichaTecnica) {
-            if (fic == null || fic.isClosed()) {
-                fic = new CadastroFichaTecnica();
-                jDesktopPane1.add(fic);
-                fic.setVisible(true);
-            }
-            jDesktopPane1.moveToFront(fic);
-        }
-
+       
     }//GEN-LAST:event_FichaTecnicaActionPerformed
 
     public static void main(String args[]) {
@@ -237,8 +220,9 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
 
+            @Override
             public void run() {
-                //new CadastroPaciente().setVisible(true);
+                
                 new login().setVisible(true);
             }
         });
