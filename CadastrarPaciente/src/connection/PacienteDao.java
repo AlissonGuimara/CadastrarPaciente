@@ -16,7 +16,7 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "delete from Pessoa where codigo = ?,?,?,?,?,?,?";
+            String sql = "delete from PESSOA where codigo = ?,?,?,?,?,?,?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getCodigo());
             ps.setString(2, paciente.getCpf());
@@ -58,12 +58,13 @@ public class PacienteDao {
         }
     }
 
-    public void insert(Pessoa paciente) {
+    public void insert(Pessoa paciente) throws SQLException {
+        Conexao con = new Conexao();
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "insert into Pessoa (codigo, cpf, Idade, nome, nomeMae, nomePai, sexo) values(?,?,?,?,?,?,?)";
+            String sql = "insert into PESSOA (codigo, cpf, Idade, nome, nomeMae, nomePai, sexo) values(?,?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getCodigo());
             ps.setString(2, paciente.getCpf());
@@ -77,8 +78,6 @@ public class PacienteDao {
             conn.commit();
 
         } catch(SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
-
             if(conn != null){
                 try {
                     conn.rollback();
@@ -87,6 +86,8 @@ public class PacienteDao {
                 }
             }
 
+            throw e;
+            
         } finally {
             if( ps != null) {
                 try {
@@ -110,7 +111,7 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "update Pessoa set codigo = ?, cpf = ?, idade = ?, nome = ? , nomeMae = ?, nomePai = ?,"
+            String sql = "update PESSOA set codigo = ?, cpf = ?, idade = ?, nome = ? , nomeMae = ?, nomePai = ?,"
                     + "sexo = ? where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getCodigo());
@@ -161,17 +162,17 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo from Pessoa";
+            String sql = "select codigo from PESSOA";
             ps = conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
                 String codigo = rs.getString(1);
-                String cpf = rs.getString(2);
-                String idade = rs.getString(3);
-                String nome = rs.getString(4);
-                String nomeMae = rs.getString(5);
-                String nomePai = rs.getString(6);
+                String cpf = rs.getString(3);
+                String idade = rs.getString(4);
+                String nome = rs.getString(2);
+                String nomeMae = rs.getString(6);
+                String nomePai = rs.getString(5);
                 String sexo = rs.getString(7);
                                 
                 Pessoa paciente = new Pessoa();
@@ -211,7 +212,7 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo from Pessoa where codigo = ?";
+            String sql = "select codigo from PESSOA where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, p.getCodigo());
             ResultSet rs = ps.executeQuery();

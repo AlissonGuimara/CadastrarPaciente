@@ -11,12 +11,13 @@ import metodos.Localizacao;
 //As exceções devem ser propagadas para a camada de apresentação, ou seja, deve ser utilizado throws em cada um dos métodos
 public class LocalizacaoDao {
 
+    
     public void delete(Localizacao loc) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "delete from Localizacao where codigo = ?,?,?,?,?,?";
+            String sql = "delete from LOCALIZACAO where codigo = ?,?,?,?,?,?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, loc.getBairro());
             ps.setString(2, loc.getCidade());
@@ -27,6 +28,7 @@ public class LocalizacaoDao {
             
             ps.execute();
 
+            
             conn.commit();
         } catch(SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
@@ -58,19 +60,22 @@ public class LocalizacaoDao {
         }
     }
 
-    public void insert(Localizacao loc) {
+    public void insert(Localizacao loc) throws SQLException {
+        Conexao con = new Conexao();
         Connection conn = null;
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "insert into Localizacao (bairro, cidade, email, estado, telefone, codigo) values(?,?,?,?,?,?)";
+            String sql = "insert into LOCALIZACAO (codigo, bairro, cidade, estado, pais, email, telefone) values(?,?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
-            ps.setString(1, loc.getBairro());
-            ps.setString(2, loc.getCidade());
-            ps.setString(3, loc.getEmail());
+            ps.setString(1, loc.getCodigo());
+            ps.setString(2, loc.getBairro());
+            ps.setString(3, loc.getCidade());
             ps.setString(4, loc.getEstado());
-            ps.setString(5, loc.getTelefone());
-            ps.setString(6, loc.getCodigo());
+            ps.setString(5, "Brasil");
+            ps.setString(6, loc.getEmail());
+            ps.setString(7, loc.getTelefone());
+                        
             ps.execute();
 
             conn.commit();
@@ -85,7 +90,9 @@ public class LocalizacaoDao {
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
-
+            
+            throw e;
+            
         } finally {
             if( ps != null) {
                 try {
@@ -109,7 +116,7 @@ public class LocalizacaoDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "update Localizacao set bairro = ?, cidade = ?, email = ?, estado = ? , telefone = ?,"
+            String sql = "update LOCALIZACAO set bairro = ?, cidade = ?, email = ?, estado = ? , telefone = ?,"
                     + " codigo = ? where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, loc.getBairro());
@@ -159,7 +166,7 @@ public class LocalizacaoDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo from Localizacao";
+            String sql = "select codigo from LOCALIZACAO";
             ps = conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
@@ -206,7 +213,7 @@ public class LocalizacaoDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo from Localizacao where codigo = ?";
+            String sql = "select codigo from LOCALIZACAO where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, loc.getCodigo());
             ResultSet rs = ps.executeQuery();

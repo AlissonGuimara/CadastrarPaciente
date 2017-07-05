@@ -1,5 +1,7 @@
 package eventos;
 
+import connection.LocalizacaoDao;
+import connection.PacienteDao;
 import janelas.CadastrarLocalizacao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,11 +12,15 @@ import java.util.logging.Logger;
 import metodos.Localizacao;
 import log.ArquivoManipular;
 import exception.AplicacaoException;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import metodos.Pessoa;
 
 public class LocalizacaoActionListener implements ActionListener {
 
     public CadastrarLocalizacao frame;
+    private Localizacao loc = new Localizacao();
+    private LocalizacaoDao dao = new LocalizacaoDao();
 
     public LocalizacaoActionListener(CadastrarLocalizacao frame) {
         this.frame = frame;
@@ -27,12 +33,17 @@ public class LocalizacaoActionListener implements ActionListener {
         if ("gravar".equals(e.getActionCommand())) {
             //o botão gravar foi clicado
             mensagem = "gravando dados de localização";
-            Localizacao loc = frame.getLocalizacao();
+            //Localizacao loc = frame.getLocalizacao();
+            this.loc = this.frame.getLocalizacao();
+            
             System.out.println(loc.toString());
             try {
-                ErrosLoc(loc.getCidade(), loc.getBairro(), loc.getEmail(), loc.getTelefone());
+                ErrosLoc(this.loc.getCidade(), this.loc.getBairro(), this.loc.getEmail(), this.loc.getTelefone());
+                dao.insert(this.loc);
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
             } catch (AplicacaoException ex) {
+                Logger.getLogger(LocalizacaoActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
                 Logger.getLogger(LocalizacaoActionListener.class.getName()).log(Level.SEVERE, null, ex);
             } finally {
                 try {

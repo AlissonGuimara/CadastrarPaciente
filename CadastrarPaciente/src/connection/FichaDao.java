@@ -18,7 +18,7 @@ public class FichaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "delete from Pessoa where codigo = ?,?,?,?,?,?";
+            String sql = "delete from FICHA where codigo = ?,?,?,?,?,?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getRegSUS());
             ps.setString(2, paciente.getNomeDoença());
@@ -60,12 +60,14 @@ public class FichaDao {
         }
     }
 
-    public void insert(Ficha paciente) {
+    public void insert(Ficha paciente) throws SQLException {
+        Conexao con = new Conexao();
         Connection conn = null;
         PreparedStatement ps = null;
+        
         try {
-            conn = Conexao.getConnection();
-            String sql = "insert into Ficha (regSUS, nomeDoença,tipoSangue,altura, peso, codigo) values(?,?,?,?,?,?)";
+            conn = con.getConnection();
+            String sql = "insert into FICHA (regSus, nomeDoenca,tipoSangue,altura, peso, codigo) values(?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getRegSUS());
             ps.setString(2, paciente.getNomeDoença());
@@ -87,6 +89,8 @@ public class FichaDao {
                     System.out.println("ERRO: " + ex.getMessage());
                 }
             }
+            
+            throw e;
 
         } finally {
             if( ps != null) {
@@ -111,7 +115,7 @@ public class FichaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "update Ficha set regSUS =?, nomeDoença =?, tipoSangue =?,"
+            String sql = "update FICHA set regSUS =?, nomeDoença =?, tipoSangue =?,"
                     + "altura =?, peso =?, codigo =? where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getRegSUS());
@@ -161,7 +165,7 @@ public class FichaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo from Ficha";
+            String sql = "select codigo from FICHA";
             ps = conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
@@ -209,7 +213,7 @@ public class FichaDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select codigo from Ficha where codigo = ?";
+            String sql = "select codigo from FICHA where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, F.getCodigo());
             ResultSet rs = ps.executeQuery();
@@ -249,8 +253,3 @@ public class FichaDao {
 
 
 }
-
-    
-    
-    
-

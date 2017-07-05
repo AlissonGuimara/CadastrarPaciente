@@ -1,5 +1,7 @@
 package eventos;
 
+import connection.FichaDao;
+import connection.PacienteDao;
 import janelas.CadastrarPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,14 +9,18 @@ import metodos.Pessoa;
 import log.ArquivoManipular;
 import exception.AplicacaoException;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import metodos.Ficha;
 
 public class PacienteActionListener implements ActionListener {
 
     private CadastrarPaciente frame;
+    private Pessoa pe = new Pessoa();
+    private PacienteDao dao = new PacienteDao();
 
     public PacienteActionListener(CadastrarPaciente frame) {
         this.frame = frame;
@@ -27,13 +33,19 @@ public class PacienteActionListener implements ActionListener {
         if ("gravar".equals(e.getActionCommand())) {
             //o botão gravar foi clicado
             mensagem = "Gravando os dados pessoais";
-            Pessoa pe = frame.getPessoa();
+            //Pessoa pe = frame.getPessoa();
+            this.pe = this.frame.getPessoa();
+            
             System.out.println(pe.toString());
             try {
-                ErrosDad(pe.getCodigo(), pe.getNome(), pe.getIdade(), pe.getCpf(), pe.getNomePai(), pe.getNomeMae());
+                ErrosDad(this.pe.getCodigo(), this.pe.getNome(), this.pe.getIdade(), this.pe.getCpf(), this.pe.getNomePai(), this.pe.getNomeMae());
+                dao.insert(pe);                
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
             } catch (AplicacaoException ex) {
                 Logger.getLogger(PacienteActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(PacienteActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, mensagem = ex.getMessage());
             } finally {
 
                 try {

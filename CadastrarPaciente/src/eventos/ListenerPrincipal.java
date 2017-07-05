@@ -6,6 +6,7 @@ import janelas.CadastroFichaTecnica;
 import janelas.CadastroPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 public class ListenerPrincipal implements ActionListener {
 
@@ -49,6 +50,16 @@ public class ListenerPrincipal implements ActionListener {
                 fic.setVisible(true);
             }
             frame.jDesktopPane1().moveToFront(fic);
+        }
+        
+        if ("sobre".equals(e.getActionCommand())) {
+
+         JOptionPane.showMessageDialog(null, "Projeto desenvolvido por: Alisson Guimara, Carlos Kombo, Novato Martins");
+        }
+        
+           if ("Sair".equals(e.getActionCommand())) {
+            
+               System.exit(0);
         }
 
     }

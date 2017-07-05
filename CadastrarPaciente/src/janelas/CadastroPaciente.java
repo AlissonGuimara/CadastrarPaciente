@@ -58,7 +58,6 @@ public class CadastroPaciente extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 450));
 
         jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setMaximumSize(new java.awt.Dimension(200, 200));

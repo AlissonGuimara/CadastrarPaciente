@@ -8,6 +8,7 @@ import metodos.Ficha;
 import log.ArquivoManipular;
 import exception.AplicacaoException;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +17,8 @@ import javax.swing.JOptionPane;
 public class FichaActionListener implements ActionListener {
 
     private CadastroFichaTecnica frame;
-
+    private Ficha ficha = new Ficha();
+    private FichaDao dao = new FichaDao();
     public FichaActionListener(CadastroFichaTecnica frame) {
         this.frame = frame;
     }
@@ -29,16 +31,21 @@ public class FichaActionListener implements ActionListener {
         if("gravar".equals(e.getActionCommand())){
             //o botão gravar foi clicado
             mensagem = "gravando dados da ficha tecnica";
-            Ficha fic = frame.getFicha();
-            System.out.println(fic.toString());
+           // Ficha fic = frame.getFicha();
+           this.ficha = this.frame.getFicha();
+            System.out.println(ficha.toString());
             
             try {
-                new FichaDao().insert(fic);
-                ErrosFic(fic.getRegSUS(), fic.getNomeDoença(), fic.getAltura(), fic.getPeso());
-                
+               // new FichaDao().insert(fic);
+               
+                ErrosFic(this.ficha.getRegSUS(), this.ficha.getNomeDoença(), this.ficha.getAltura(), this.ficha.getPeso());
+                dao.insert(this.ficha); 
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
             } catch (AplicacaoException ex) {
                 Logger.getLogger(LocalizacaoActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(FichaActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, mensagem = ex.getMessage());
             } finally {
                 try {
                     ArquivoManipular.EscreverArquivo("log.txt", new Date() + " -> Tela: " + this.frame.getClass() + " = " + mensagem + "\r\n", true);
