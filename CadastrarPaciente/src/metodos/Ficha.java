@@ -6,18 +6,15 @@ public class Ficha {
     
     public Ficha (){
     }
-    
-    Pessoa p;
 
     public Ficha(String regSUS, String nomeDoença, String tipoSangue, String altura, String peso, String codigo) {
 
         this.regSUS = regSUS;
         this.nomeDoença = nomeDoença;
         this.tipoSangue = tipoSangue;
-
         this.altura = altura;
         this.peso = peso;
-        this.codigo = p.getCodigo();
+        this.codigo = codigo;
     }
 
     public String getRegSUS() {

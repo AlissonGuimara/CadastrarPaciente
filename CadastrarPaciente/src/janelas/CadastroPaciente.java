@@ -6,14 +6,13 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 
 public class CadastroPaciente extends javax.swing.JFrame {
 
     private ListenerPrincipal listener = new ListenerPrincipal(this);
-    
-    protected CadastrarPaciente dad = null;
-    protected CadastrarLocalizacao loc = null;
-    protected CadastroFichaTecnica fic = null;
 
     public CadastroPaciente() {
         initComponents();
@@ -34,7 +33,17 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jInternalFrameContato = new javax.swing.JInternalFrame();
         jFileChooser1 = new javax.swing.JFileChooser();
         jPanel1 = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/view/38110427-Flat-health-care-and-medical-research-background-Healthcare--Stock-Photo.jpg"));
+        final Image image = icon.getImage();
+        jDesktopPane1 = new javax.swing.JDesktopPane(){
+
+            public void paintComponent(Graphics g){
+
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+
+            }
+
+        };
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Cadastrar = new javax.swing.JMenuItem();
@@ -74,7 +83,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
 
         jPanel1.add(jDesktopPane1);
@@ -163,7 +172,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
         );
 
         pack();

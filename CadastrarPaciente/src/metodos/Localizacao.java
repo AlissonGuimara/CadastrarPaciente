@@ -4,7 +4,7 @@ public class Localizacao {
 
     public Localizacao() {
     }
-    Pessoa p;
+
 
     public Localizacao(String estado, String cidade, String bairro, String email, String telefone, String codigo) {
 
@@ -13,7 +13,7 @@ public class Localizacao {
         this.estado = estado;
         this.telefone = telefone;
         this.bairro = bairro;
-        this.codigo = p.getCodigo();
+        this.codigo = codigo;
 
     }
 

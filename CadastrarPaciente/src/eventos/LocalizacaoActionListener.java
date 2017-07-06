@@ -38,7 +38,7 @@ public class LocalizacaoActionListener implements ActionListener {
             
             System.out.println(loc.toString());
             try {
-                ErrosLoc(this.loc.getCidade(), this.loc.getBairro(), this.loc.getEmail(), this.loc.getTelefone());
+                ErrosLoc(this.loc.getCidade(), this.loc.getBairro(), this.loc.getEmail(), this.loc.getTelefone(), this.loc.getCodigo());
                 dao.insert(this.loc);
                 JOptionPane.showMessageDialog(null, mensagem = "Operação Salva com Sucesso !");
             } catch (AplicacaoException ex) {
@@ -75,10 +75,10 @@ public class LocalizacaoActionListener implements ActionListener {
             }
         }
     
-    private void ErrosLoc(String cidade, String bairro, String email, String telefone) throws AplicacaoException {
+    private void ErrosLoc(String cidade, String bairro, String email, String telefone, String codigo) throws AplicacaoException {
 
         if (cidade == null || cidade.isEmpty() || bairro == null || bairro.isEmpty() || email == null || email.isEmpty()
-                || telefone == null || telefone.isEmpty()) {
+                || telefone == null || telefone.isEmpty() || codigo == null || codigo.isEmpty()) {
             
             JOptionPane.showMessageDialog(null,"Todos os campos devem ser preenchidos" );
             throw new AplicacaoException("Todos os campos devem ser preenchidos");

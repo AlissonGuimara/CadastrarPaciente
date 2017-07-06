@@ -64,12 +64,12 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "insert into PESSOA (codigo, cpf, Idade, nome, nomeMae, nomePai, sexo) values(?,?,?,?,?,?,?)";
+            String sql = "insert into PESSOA (codigo, nome, cpf, Idade,  nomeMae, nomePai, sexo) values(?,?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
             ps.setString(1, paciente.getCodigo());
-            ps.setString(2, paciente.getCpf());
-            ps.setString(3, paciente.getIdade());
-            ps.setString(4, paciente.getNome());
+            ps.setString(3, paciente.getCpf());
+            ps.setString(4, paciente.getIdade());
+            ps.setString(2, paciente.getNome());
             ps.setString(5, paciente.getNomeMae());
             ps.setString(6, paciente.getNomePai());
             ps.setString(7, paciente.getSexo());

@@ -67,14 +67,15 @@ public class FichaDao {
         
         try {
             conn = con.getConnection();
-            String sql = "insert into FICHA (regSus, nomeDoenca,tipoSangue,altura, peso, codigo) values(?,?,?,?,?,?)";
+            String sql = "insert into FICHA (codigo, regSus, nomeDoenca,tipoSangue,altura, peso) values(?,?,?,?,?,?)";
             ps = conn.prepareStatement(sql);
-            ps.setString(1, paciente.getRegSUS());
-            ps.setString(2, paciente.getNomeDoença());
-            ps.setString(3, paciente.getTipoSangue());
-            ps.setString(4, paciente.getAltura());
-            ps.setString(5, paciente.getPeso());
-            ps.setString(6, paciente.getCodigo());
+            ps.setString(1, paciente.getCodigo());
+            ps.setString(2, paciente.getRegSUS());
+            ps.setString(3, paciente.getNomeDoença());
+            ps.setString(4, paciente.getTipoSangue());
+            ps.setString(5, paciente.getAltura());
+            ps.setString(6, paciente.getPeso());
+            
             ps.execute();
 
             conn.commit();

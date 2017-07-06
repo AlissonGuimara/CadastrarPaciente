@@ -2,6 +2,9 @@ package janelas;
 
 import metodos.Pessoa;
 import eventos.PacienteActionListener;
+import java.awt.Image;
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 
 public class CadastrarPaciente extends javax.swing.JInternalFrame {
 
@@ -42,7 +45,17 @@ public class CadastrarPaciente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/view/imagem1.png"));
+        final Image image = icon.getImage();
+        jPanel4 = new javax.swing.JPanel(){
+
+            public void paintComponent(Graphics g){
+
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+
+            }
+
+        };
         jLabel1Nome9 = new javax.swing.JLabel();
         jLabel1Nome10 = new javax.swing.JLabel();
         jLabel1Nome11 = new javax.swing.JLabel();
@@ -96,11 +109,7 @@ public class CadastrarPaciente extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Código:");
 
-        try {
-            codigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        codigo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
         gravar.setText("Gravar");
 
