@@ -18,8 +18,6 @@ CREATE	TABLE				PESSOA
 	(
 	codigo				varchar(10)
 					NOT NULL
-					CONSTRAINT pessoa_pk
-					PRIMARY KEY
 					,
 	nome				varchar(100)
 					NOT NULL
@@ -35,6 +33,10 @@ CREATE	TABLE				PESSOA
 	nomePai				varchar(100)
 					,
 	sexo				varchar(20)
+					,
+					CONSTRAINT pessoa_pk
+						PRIMARY KEY (codigo)
+					
 	)
 ;
 
@@ -42,10 +44,6 @@ CREATE	TABLE				LOCALIZACAO
 	(
 	codigo				varchar(10)
 					NOT NULL
-					,
-					CONSTRAINT localizacao_f1
-						FOREIGN KEY(codigo)
-							REFERENCES PESSOA(codigo)
 					,
 	bairro				varchar(50)
 					NOT NULL
@@ -59,13 +57,14 @@ CREATE	TABLE				LOCALIZACAO
 	pais				varchar(20)
 					NOT NULL
 					,
-					CONSTRAINT localizacao_enderecos_f2
-						FOREIGN KEY(cidade, estado, pais)
-							REFERENCES CIDADES(cidade, estado, pais)
-					,
 	email				varchar(20)
 					,
 	telefone			varchar(20)
+					,
+					CONSTRAINT localizacao_f1
+						FOREIGN KEY(codigo)
+							REFERENCES PESSOA(codigo)
+					
 	)
 ;
 
@@ -73,10 +72,6 @@ CREATE	TABLE				FICHA
 	(
 	codigo				varchar(10)
 					NOT NULL
-					,
-					CONSTRAINT ficha_f1
-						FOREIGN KEY(codigo)
-							REFERENCES PESSOA(codigo)
 					,
 	regSus				varchar(20)
 					NOT NULL
@@ -92,5 +87,9 @@ CREATE	TABLE				FICHA
 					,
 	peso				varchar(20)
 					NOT NULL
+					,
+					CONSTRAINT ficha_f1
+						FOREIGN KEY(codigo)
+							REFERENCES PESSOA(codigo)
 	)
 ;

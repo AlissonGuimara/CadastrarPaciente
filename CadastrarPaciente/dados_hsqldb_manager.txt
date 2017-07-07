@@ -5,3 +5,7 @@ Diver: org.hsqldb.jdbcDriver
 URL: jdbc:hsqldb:hsql://localhost/agendadb
 User: SA
 Password: [VAZIO]
+
+
+-------selecionar tudo-------------
+select * from pessoa as a, ficha as b, localizacao as c where a.codigo = b.codigo and b.codigo = c.codigo

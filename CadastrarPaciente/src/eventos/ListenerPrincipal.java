@@ -13,6 +13,7 @@ import metodos.Pessoa;
 public class ListenerPrincipal implements ActionListener {
 
     private CadastroPaciente frame;
+    private Pessoa p = new Pessoa();
     protected CadastrarPaciente dad = null;
     protected CadastrarLocalizacao loc = null;
     protected CadastroFichaTecnica fic = null;
@@ -66,9 +67,9 @@ public class ListenerPrincipal implements ActionListener {
         }
            
            if ("BuscarPaciente".equals(e.getActionCommand())) {
-
-         //JOptionPane.showMessageDialog(null, dao.getAll());
-         System.out.println(dao.getPaciente("77"));
+               this.p = this.dad.getPessoa();
+         //JOptionPane.showMssageDialog(null, dao.getAll());
+         System.out.println(dao.getPaciente(p) );
         }
 
     }

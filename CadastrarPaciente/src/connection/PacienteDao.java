@@ -256,7 +256,7 @@ public class PacienteDao {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            String sql = "select * from PESSOA where codigo = 66";
+            String sql = "select * from PESSOA where codigo = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, s);
             ResultSet rs = ps.executeQuery();
