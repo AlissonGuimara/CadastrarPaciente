@@ -71,6 +71,14 @@
                 <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="*/"/>
               </AuxValues>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="BuscarPaciente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar Paciente"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="BuscarPaciente.addActionListener(listener);&#xa;BuscarPaciente.setActionCommand(&quot;BuscarPaciente&quot;);"/>
+              </AuxValues>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemSair">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sair"/>

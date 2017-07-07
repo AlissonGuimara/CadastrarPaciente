@@ -249,7 +249,50 @@ public class PacienteDao {
         }
         return null;
     }
-
+    
+    
+    public String getPaciente(String s) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try {
+            conn = Conexao.getConnection();
+            String sql = "select * from PESSOA where codigo = 66";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, s);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()) {
+                Pessoa paciente = new Pessoa();
+               
+                paciente.setCodigo(rs.getString(1));
+                paciente.setCpf(rs.getString(2));
+                paciente.setIdade(rs.getString(3));
+                paciente.setNome(rs.getString(4));
+                paciente.setNomeMae(rs.getString(5));
+                paciente.setNomePai(rs.getString(6));
+                paciente.setSexo(rs.getString(7));
+                return paciente.toString();
+            }
+        } catch(SQLException e) {
+            System.out.println("ERRO: " + e.getMessage());
+        } finally {
+            if( ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERRO: " + ex.getMessage());
+                }
+            }
+            if(conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    System.out.println("ERRO: " + ex.getMessage());
+                }
+            }
+        }
+        return null;
+    }
 
 
 }

@@ -7,6 +7,8 @@ import janelas.CadastroPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import connection.PacienteDao;
+import metodos.Pessoa;
 
 public class ListenerPrincipal implements ActionListener {
 
@@ -14,6 +16,7 @@ public class ListenerPrincipal implements ActionListener {
     protected CadastrarPaciente dad = null;
     protected CadastrarLocalizacao loc = null;
     protected CadastroFichaTecnica fic = null;
+    private PacienteDao dao = new PacienteDao();
 
     public ListenerPrincipal(CadastroPaciente frame) {
         this.frame = frame;
@@ -60,6 +63,12 @@ public class ListenerPrincipal implements ActionListener {
            if ("Sair".equals(e.getActionCommand())) {
             
                System.exit(0);
+        }
+           
+           if ("BuscarPaciente".equals(e.getActionCommand())) {
+
+         //JOptionPane.showMessageDialog(null, dao.getAll());
+         System.out.println(dao.getPaciente("77"));
         }
 
     }

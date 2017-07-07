@@ -49,6 +49,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
         Cadastrar = new javax.swing.JMenuItem();
         Localização = new javax.swing.JMenuItem();
         FichaTecnica = new javax.swing.JMenuItem();
+        BuscarPaciente = new javax.swing.JMenuItem();
         jMenuItemSair = new javax.swing.JMenuItem();
         jMenuAjuda = new javax.swing.JMenu();
         jMenuItemSobre = new javax.swing.JMenuItem();
@@ -130,6 +131,11 @@ public class CadastroPaciente extends javax.swing.JFrame {
         jMenu1.add(FichaTecnica);
         FichaTecnica.addActionListener(listener);
         FichaTecnica.setActionCommand("FichaTecnica");
+
+        BuscarPaciente.setText("Buscar Paciente");
+        jMenu1.add(BuscarPaciente);
+        BuscarPaciente.addActionListener(listener);
+        BuscarPaciente.setActionCommand("BuscarPaciente");
 
         jMenuItemSair.setText("Sair");
         jMenuItemSair.addActionListener(new java.awt.event.ActionListener() {
@@ -238,6 +244,7 @@ public class CadastroPaciente extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem BuscarPaciente;
     private javax.swing.JMenuItem Cadastrar;
     private javax.swing.JMenuItem FichaTecnica;
     private javax.swing.JMenuItem Localização;
