@@ -1,9 +1,8 @@
 
 
-Setting Name: Exemplo 1 - ConnBanco
+Setting Name: Paciente2 - ConnBanco
 Diver: org.hsqldb.jdbcDriver
-URL: jdbc:hsqldb:hsql://localhost/agendadb
-User: SA
+URL: jdbc:hsqldb:hsql://localhost/paciente2dbUser: SA
 Password: [VAZIO]
 
 
